@@ -1,9 +1,20 @@
+// Палитра
+$color-main:#1E1E1E;  // Основной Цвет Фона
+$color-sub: #3A3939;  // Дополнительный Цвет Фона
+$color-text:#ffffff;  // Основной Цвет Текста
+$color-emph:#E52335;  // Выделяющий Цвет Текста
+
 *{
   padding:  0;
   margin: 0;
   border:  0;
 
   color: #FFFFFF;
+}
+
+html{
+  //TODO Сделать адаптивный шрифт
+  font-size: 18px;
 }
 
 body{
@@ -18,22 +29,46 @@ header{
   flex-direction: column;
   text-align: center;
   justify-content: center;
+  align-items: center;
   font-family: "Loew", sans-serif;
-}
 
-.title {
-  font-weight: 800;
-  font-size: 4em;
-  letter-spacing: 0.1em;
-  line-height: 0.8;
-}
-
-.sub-title{
-  font-weight: 700;
-  font-size: 1.7em;
-  letter-spacing: 0.18em;
-
-  &::first-letter{
-    color: #E52335;
+  .title {
+    font-weight: 800;
+    font-size: 6em;
+    letter-spacing: 0.1em;
+    line-height: 1;
+  }
+  
+  .sub-title{
+    font-weight: 700;
+    font-size: 2.5em;
+    letter-spacing: 0.18em;
+  
+    &::first-letter{
+      color: #E52335;
+    }
   }
 }
+
+
+progress {
+  &#setup{
+    height: 1px;
+    margin-top: 1em;
+    background-color: #1E1E1E;
+    &::-webkit-progress-bar{
+      background-color: #1E1E1E;
+    }
+
+    &::-webkit-progress-value{
+      border-radius: 2px;
+      background-color: $color-emph;
+    }
+
+    &::-moz-progress-bar{
+      border-radius: 2px;
+      background-color: $color-emph;
+    }
+  }
+}
+
