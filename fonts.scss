@@ -1,0 +1,35 @@
+/* Обычный */
+@font-face {
+  font-family: 'Loew';
+  font-style: normal;
+  font-weight: normal;
+  src: local('Loew'),
+      url('fonts/Loew/Loew-Regular.otf') format('otf');
+}
+
+/* Жирный */
+@font-face {
+  font-family: 'Loew';
+  font-style: normal;
+  font-weight: bold;
+  src: local('Loew'),
+      url('fonts/Loew/Loew-Italic.otf') format('otf');
+}
+
+/* Курсив */
+@font-face {
+  font-family: 'Loew';
+  font-style: italic;
+  font-weight: normal;
+  src: local('Loew'),
+    url('fonts/Loew/Loew-Italic.otf') format('otf');
+}
+
+/* Жирный курсив */
+@font-face {
+  font-family: 'Loew';
+  font-style: italic;
+  font-weight: bold;
+  src: local('Loew'),
+      url('fonts/Loew/Loew-BoldItalic.otf') format('otf');
+}

@@ -1,0 +1,39 @@
+*{
+  padding:  0;
+  margin: 0;
+  border:  0;
+
+  color: #FFFFFF;
+}
+
+body{
+  background-color: #1E1E1E;
+  height: 100vh;
+}
+
+
+header{
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+  font-family: "Loew", sans-serif;
+}
+
+.title {
+  font-weight: 800;
+  font-size: 4em;
+  letter-spacing: 0.1em;
+  line-height: 0.8;
+}
+
+.sub-title{
+  font-weight: 700;
+  font-size: 1.7em;
+  letter-spacing: 0.18em;
+
+  &::first-letter{
+    color: #E52335;
+  }
+}
