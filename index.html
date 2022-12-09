@@ -5,18 +5,151 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+<!-- Компоненты стиля -->
+  <!-- Шрифты -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap" rel="stylesheet">
+
   <link rel="stylesheet" href="css/styleClear.css">
+  <link rel="stylesheet" href="css/animation.css">
+  <link rel="stylesheet" href="css/media.css">
+<!-- Стиль документа -->
   <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="css/fonts.css">
-
-
   <title>SVX</title>
+
 </head>
+<!-- TODO Сделать прелоадер -->
 <body>
-  <header>
-    <div class="title">SVX</div>
-    <div class="sub-title">detailing</div>
+  
+  <header hidden>
+    <!-- TODO Сделать задержку -->
     <progress id="setup" max="100" value="100" ></progress>
+    <div class="auntification">
+      <input type="radio" name="auntification" id="enter" class="enter" checked>
+      <label for="enter">Вход</label>
+      <input type="radio" name="auntification" id="registration" class="registration">
+      <label for="registration">Регистрация</label>
+    </div>
+    <div class="logo">
+      <div class="title"><p>SVX</p></div>
+      <div class="sub-title"><p>detailing</p></div>
+    </div>
   </header>
+  
+  <!-- TODO Сделать открытие вкладок -->
+  <section id="entry" hidden>
+    <form action="#" id="entry-input" >
+      <div class="enterInput">
+        <label for="phone-input">Номер телефона</label>
+        <input type="tel" name="authorization" id="phone-input" placeholder="+7 (___) ___-__-__" required autocomplete="off">
+      </div>
+      <div class="enterInput">
+        <label for="password-input">Пароль</label>
+        <div class="inputInline">
+          <input type="password" name="authorization" id="password-input" required autocomplete="off">
+          <a href="#" class="password-control" onclick="return show_hide_password(this);"></a>
+        </div>
+      </div>
+
+      <a href="#">Забыли пароль?</a>
+
+      <div class="eroorMessage" hidden>
+        Неверный номер телефона, пароль или такого аккаунта не существует
+      </div>
+
+      <input type="submit" value="Войти" class="btn">
+    </form>
+
+    <form action="#" id="restore-password" hidden>
+      <div class="enterInput">
+        <label for="phone-input">Номер телефона для восстановления пароля</label>
+        <input type="tel" name="authorization" id="phone-input" placeholder="+7 (___) ___-__-__" required autocomplete="off">
+      </div>
+
+      <input type="submit" value="Прислать пароль в sms" class="btn">
+    </form>
+  </section>
+
+  <!-- TODO Разобраться с паказом пароля -->
+  <section id="registration" hidden>
+    <form action="#">
+      <div class="enterInput">
+        <label for="name">Фамилия, имя</label>
+        <input type="text" name="registration" id="name" required="required" autocomplete="off">
+      </div>
+      <div class="enterInput">
+        <label for="car-brand">Марка авто</label>
+        <input type="text" name="registration" id="car-brand" required="required" autocomplete="off">
+      </div>
+      <div class="enterInput">
+        <label for="car-model">Модель авто</label>
+        <input type="text" name="registration" id="car-model" required="required" autocomplete="off">
+      </div>
+      <div class="enterInput">
+        <!-- TODO Сделать маску для гос номера  -->
+        <!-- TODO Сделать подсказку -->
+        <label for="car-number">Гос. номер</label>
+        <input type="text" name="registration" id="car-number" required="required" autocomplete="off" >
+      </div>
+      <div class="enterInput">
+        <label for="phone-input">Номер телефона</label>
+        <input type="tel" name="registration" id="phone-input" placeholder="+7 (___) ___-__-__" required autocomplete="off">
+      </div>
+      <div class="enterInput">
+        <label for="password-input">Пароль</label>
+        <div class="inputInline">
+          <input type="password" name="registration" id="password-input" required autocomplete="off">
+          <a href="#" class="password-control" onclick="return show_hide_password(this);"></a>
+        </div>
+      </div>
+
+      <div class="agreement">
+        <input type="radio" name="agreement" id="agreement-chec" required autocomplete="off">
+        <label for="agreement-chec">Я принимаю условия <a href="#">пользовательского соглашения</a></label>
+      </div>
+
+      <input type="submit" value="Зарегистрироваться" class="btn">
+    </form>
+  </section>
+
+  <section id="agreement" hidden>
+    <div class="bac">
+      <a href="#">
+        <svg width="35" height="44" viewBox="0 0 35 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <g filter="url(#filter0_d_118_3538)">
+            <path fill-rule="evenodd" clip-rule="evenodd"
+              d="M27.6274 8.73104C28.0617 8.38984 28.1203 7.7751 27.7583 7.35798C27.3963 6.94087 26.7508 6.87932 26.3165 7.22052L7.36828 22.1075C7.10556 22.3139 6.98032 22.6204 7.00251 22.9227C7.01659 23.2053 7.15852 23.4781 7.41508 23.6562L26.3633 36.8146C26.817 37.1296 27.4572 37.0297 27.7933 36.5915C28.1295 36.1533 28.0342 35.5427 27.5806 35.2276L9.70353 22.8132L27.6274 8.73104Z"
+              fill="white" />
+          </g>
+          <defs>
+            <filter id="filter0_d_118_3538" x="0" y="0" width="34.9956" height="43.998" filterUnits="userSpaceOnUse"
+              color-interpolation-filters="sRGB">
+              <feFlood flood-opacity="0" result="BackgroundImageFix" />
+              <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+                result="hardAlpha" />
+              <feOffset />
+              <feGaussianBlur stdDeviation="3.5" />
+              <feComposite in2="hardAlpha" operator="out" />
+              <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0" />
+              <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_118_3538" />
+              <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_118_3538" result="shape" />
+            </filter>
+          </defs>
+        </svg>
+      </a>
+    </div>
+    <h3>Пользовательское соглашение</h3>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum, itaque nulla? Incidunt, dolor velit veniam tempore fugit culpa repudiandae mollitia repellat est facilis quo vero quos dolorum totam, repellendus unde?
+    Eos exercitationem hic, blanditiis iure eveniet doloremque reiciendis maiores modi consectetur sint aperiam odio optio nesciunt perspiciatis ratione at quaerat officia magni architecto laudantium nobis quo voluptatum ullam. Consequuntur, dolore!
+    Facilis nisi blanditiis exercitationem eos sequi alias molestias facere, quos et quisquam dolores quis, unde earum quo cupiditate rem, doloribus deleniti ad animi itaque. Esse laboriosam aut mollitia optio quasi?
+    Ea praesentium sed excepturi laborum voluptas, at id nihil quam minima aliquid quo obcaecati explicabo, quos velit. Culpa atque eligendi modi, sapiente, beatae voluptates inventore pariatur dolorem, optio sed aperiam?
+    Odit pariatur nobis architecto obcaecati veniam non dolores, eaque doloremque numquam magnam, itaque, quasi cumque asperiores libero quisquam ab repellat laboriosam laudantium saepe id aspernatur quis. Eos odio animi doloremque.
+    In illum eveniet similique impedit praesentium expedita vero, recusandae adipisci perferendis, quo dolor cumque voluptates iusto, vel dolore voluptatibus minima atque amet. Deleniti nostrum eveniet ducimus vero sed culpa a.
+    Placeat fuga ratione dolore ipsam eligendi veritatis sequi asperiores enim! Eos sequi ut doloribus perspiciatis debitis fugit voluptatem eligendi fuga atque! Nesciunt assumenda repudiandae tenetur dolor dolorem totam! Aperiam, soluta?
+    Accusantium minima fugiat officia beatae, debitis ratione porro sed non officiis consequatur pariatur labore esse vero adipisci quasi voluptas vel expedita, cum quibusdam quos. Magnam recusandae a consequuntur expedita nemo.</p>
+  </section>
 </body>
 </html>
+
+<script src="/index.js"></script>

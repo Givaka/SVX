@@ -1,0 +1,22 @@
+@-webkit-keyframes logoUp {
+  50% {
+    height: 50%;
+  }
+  55% {
+    height: auto;
+  }
+  100% {
+    height: auto;
+  }
+}
+@keyframes logoUp {
+  50% {
+    height: 50%;
+  }
+  55% {
+    height: auto;
+  }
+  100% {
+    height: auto;
+  }
+}
