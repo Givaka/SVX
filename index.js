@@ -1,21 +1,3 @@
-// window.onload = function () {
-//   setTimeout(progressSetup(), 100)
-
-//   // let progress = document.getElementsByTagName("progress")[0];
-//   // while (progress.value != 100){
-//   //   setTimeout(() => progress.value++, 1000)
-//   // }
-// }
-
-// function progressSetup() {
-//   if (document.getElementsByTagName("progress")[0].value != 100) {
-//     document.getElementsByTagName("progress")[0].value =
-//       document.getElementsByTagName("progress")[0].value + 1;
-//     console.log(document.getElementsByTagName("progress")[0].value);
-//     setTimeout(progressSetup(), 1000);
-//   }
-// }
-
 // Маска для телефона
 window.addEventListener("DOMContentLoaded", function () {
   [].forEach.call(
@@ -76,3 +58,47 @@ function show_hide_password(target) {
   return false;
 }
 
+// Переключение страниц
+// header = {"frameName": String, "show": boolean}
+function swapPage(from, to, header) {
+  document.getElementById(from).hidden = true;
+  document.getElementById(to).hidden = false;
+  
+  if (Object.entries(header).length != 0) {
+    document.getElementById(header.frameName).getElementsByTagName('header')[0].hidden = !header.show;
+  }
+}
+
+// Отображение услуг в выбранной категории
+function sliderPage(all, to) {
+  pages = document.getElementsByClassName(all);
+  for (let page in pages){
+    pages[page].hidden = true;
+  }
+  document.getElementById(to).hidden = false;
+}
+
+// Раскрытие описание услуги
+function seeService(when, inside=true) {
+  let menu = document.querySelector("header >.menu");
+  console.log(when);
+  when = when.getAttribute("service");
+  if(inside){
+    let back = document.createElement("a");
+    back.href = "#";
+    back.classList.add('back');
+    back.setAttribute("service", when);
+    back.onclick = function () { seeService(this, false); }
+    menu.prepend(back);
+    menu.getElementsByClassName("title")[0].hidden = true;
+    document.getElementById("services").hidden = true;
+    document.getElementById("descriptions").hidden = false;
+    document.getElementById(when).hidden = false;
+  } else{
+    menu.getElementsByClassName("back")[0].remove();
+    menu.getElementsByClassName("title")[0].hidden = false;
+    document.getElementById(when).hidden = true;
+    document.getElementById("descriptions").hidden = true;
+    document.getElementById("services").hidden = false;
+  }
+}

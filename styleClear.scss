@@ -24,7 +24,7 @@ blockquote, q {
 }
 
 blockquote:before, blockquote:after, q:before, q:after {
-  content: "";
+  content: '';
   content: none;
 }
 
@@ -57,4 +57,4 @@ a:hover {
 
 [hidden] {
   display: none !important;
-}/*# sourceMappingURL=styleClear.css.map */
+}
