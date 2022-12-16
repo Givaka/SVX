@@ -46,7 +46,8 @@ window.addEventListener("DOMContentLoaded", function () {
 
 // Показ/Скрытие пароля
 function show_hide_password(target) {
-  var input = document.getElementById("password-input");
+  // var input = document.getElementById("password-input");
+  var input = target.previousElementSibling;
   if (input.getAttribute("type") == "password") {
     target.classList.add("view");
     input.setAttribute("type", "text");
@@ -100,4 +101,16 @@ function seeService(when, inside=true) {
     document.getElementById("descriptions").hidden = true;
     document.getElementById("services").hidden = false;
   }
+}
+
+
+// Переход со скрытием всех открытых
+function footerSwap(to) {
+  let allSelection = document.getElementsByTagName('section');
+
+  for (let selection of allSelection) {
+    selection.hidden = true;
+  }
+
+  document.getElementById(to).hidden = false;
 }
