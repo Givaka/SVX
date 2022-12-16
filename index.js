@@ -46,7 +46,6 @@ window.addEventListener("DOMContentLoaded", function () {
 
 // Показ/Скрытие пароля
 function show_hide_password(target) {
-  console.log("test");
   var input = document.getElementById("password-input");
   if (input.getAttribute("type") == "password") {
     target.classList.add("view");
@@ -61,6 +60,7 @@ function show_hide_password(target) {
 // Переключение страниц
 // header = {"frameName": String, "show": boolean}
 function swapPage(from, to, header) {
+  console.log(document.getElementById(from), document.getElementById(to));
   document.getElementById(from).hidden = true;
   document.getElementById(to).hidden = false;
   
@@ -81,7 +81,6 @@ function sliderPage(all, to) {
 // Раскрытие описание услуги
 function seeService(when, inside=true) {
   let menu = document.querySelector("header >.menu");
-  console.log(when);
   when = when.getAttribute("service");
   if(inside){
     let back = document.createElement("a");

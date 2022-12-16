@@ -25,7 +25,6 @@
   <link rel="stylesheet" href="css/media.min.css">
   <!-- Стиль документа -->
   <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="css/style.css.map">
 
   <title>SVX</title>
 
@@ -828,9 +827,10 @@
 
 
     <section id="settings">
-      <div>
+      <div id="options" >
         <div class="options">
           <h3>Уведомления</h3>
+          
           <form action="#">
             <label for="sound">Звук</label>
             <label for="sound" class="ios-checkbox">
@@ -851,10 +851,25 @@
           </div>
         </div>
         <div class ="btn-group">
-          <a class="btn">Служба поддержки</a>
-          <a class="btn enable">Выйти</a>
-          <a href="#">Удалить аккаунт</a>
+          <a href="#" class="btn">Служба поддержки</a>
+          <a href="#" class="btn enable" onclick="swapPage('options', 'exitAccount', {})">Выйти</a>
+          <a href="#" onclick="swapPage('options', 'deleteAccount', {})">Удалить аккаунт</a>
         </div>
+      </div>
+
+      <div id="exitAccount" hidden>
+        <h2>Вы действительно хотите выйти?</h2>
+        <a href="#" class="btn">Да</a>
+        <a href="#" class="btn enable" onclick="swapPage('exitAccount', 'options', {})">Нет</a>
+      </div>
+      <div id="deleteAccount" hidden>
+        <h2>Вы действительно хотите удалить аккаунт?</h2>
+        <a href="#" class="btn">Да</a>
+        <a href="#" class="btn enable"  onclick="swapPage('deleteAccount', 'options', {})">Нет</a>
+        <h5>
+          Восстановить аккаунт будет невозможно.
+          Для повторного исполования приложения вам нужно будет пройти регистрацию
+        </h5>
       </div>
     </section>
 

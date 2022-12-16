@@ -98,6 +98,7 @@ main {
         height: 95%;
         padding: 1rem;
         // padding-bottom: 5em;
+        justify-content: center;
         >div{
           margin: 0;
           padding: 0;
@@ -682,4 +683,10 @@ h6 { font-size: .6rem; }
 .btn-group{
   display: flex;
   flex-direction: column;
+}
+
+#deleteAccount{
+  h5{
+    color: rgba($color-text, $alpha: .4)
+  }
 }
