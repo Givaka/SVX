@@ -69,7 +69,7 @@ main section#settings {
 main section#settings > div {
   display: flex;
   flex-direction: column;
-  height: 100%;
+  height: 95%;
   padding: 1rem;
 }
 main section#settings > div > div {
