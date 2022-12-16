@@ -61,12 +61,12 @@ function show_hide_password(target) {
 // Переключение страниц
 // header = {"frameName": String, "show": boolean}
 function swapPage(from, to, header) {
-  console.log(document.getElementById(from), document.getElementById(to));
   document.getElementById(from).hidden = true;
   document.getElementById(to).hidden = false;
   
   if (Object.entries(header).length != 0) {
-    document.getElementById(header.frameName).getElementsByTagName('header')[0].hidden = !header.show;
+    console.log(header.frameName.getElementsByTagName("header")[0]);
+    header.frameName.getElementsByTagName('header')[0].hidden = !header.show;
   }
 }
 
@@ -110,6 +110,16 @@ function footerSwap(to) {
 
   for (let selection of allSelection) {
     selection.hidden = true;
+  }
+  for (let service of document.getElementsByClassName("service")) {
+    service.hidden = true;
+
+    // Убераем кнопку назад со страниц описания при переходе с кнопки домой
+    let menu = document.querySelector("header >.menu");
+    menu.getElementsByClassName("title")[0].hidden = false;
+    if (menu.getElementsByClassName("back").length != 0) {
+      menu.getElementsByClassName("back")[0].remove();
+    }
   }
 
   document.getElementById(to).hidden = false;

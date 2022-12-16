@@ -15,6 +15,10 @@ body {
   background-color: #1E1E1E;
   color: #ffffff;
 }
+body > *, body > * > footer {
+  max-width: 1000px;
+  margin: 0 auto;
+}
 
 main header {
   flex-direction: column;
@@ -156,8 +160,8 @@ main section > div > div .preview {
 main section > div > div .preview::after {
   content: attr(time-delay);
   position: absolute;
-  right: 5%;
-  bottom: -10%;
+  right: 1em;
+  bottom: -0.9em;
   min-width: 4.6rem;
   padding: 0.6rem 0.9rem;
   margin-top: 5rem;
@@ -346,8 +350,8 @@ article .view img {
 article .view::after {
   content: attr(time-delay);
   position: absolute;
-  right: 5%;
-  bottom: -5%;
+  right: 1em;
+  bottom: -0.9em;
   min-width: 4.6rem;
   padding: 0.6rem 0.9rem;
   margin-top: 5rem;

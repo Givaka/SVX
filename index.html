@@ -71,7 +71,7 @@
           Неверный номер телефона, пароль или такого аккаунта не существует
         </div>
 
-        <input type="submit" value="Войти" class="btn enable" onclick="pageSwap()">
+        <input type="submit" value="Войти" class="btn enable" onclick="swapPage('enterFrame', 'main', {})">
       </form>
 
       <form action="#" id="restore-password" hidden>
@@ -120,7 +120,7 @@
 
         <div class="agreement">
           <input type="radio" name="agreement" id="agreement-chec" required autocomplete="off">
-          <label for="agreement-chec">Я принимаю условия <a href="#">пользовательского соглашения</a></label>
+          <label for="agreement-chec">Я принимаю условия <a href="#" onclick="swapPage('registrationPage','agreementPage',{'frameName': enterFrame, 'show': false})">пользовательского соглашения</a></label>
         </div>
 
         <input type="submit" value="Зарегистрироваться" class="btn enable">
@@ -129,7 +129,7 @@
 
     <section id="agreementPage" hidden>
       <div class="bac">
-        <a href="#" onclick="swapPage('agreementPage','registrationPage', {'frameName': 'enterFrame', 'show': true})">
+        <a href="#" onclick="swapPage('agreementPage','registrationPage', {'frameName': enterFrame, 'show': true})">
           <div></div>
         </a>
       </div>
@@ -158,7 +158,7 @@
     </section>
   </div>
 
-  <main hidden>
+  <main id="main" hidden>
     <header > 
       <div class="menu">
         <div class="title">SVX</div>
@@ -166,7 +166,7 @@
       </div>
     </header>
 
-    <section id="services" hidden>
+    <section id="services">
       <nav>
         <input type="radio" name="service" id="washing" checked>
         <label for="washing" onclick="sliderPage('all-service','washingPage')">Мойка кузова</label>
@@ -824,8 +824,13 @@
       </article>
     </section>
 
+    <section id="appointment" hidden></section>
 
-    <section id="settings">
+    <secttion id="profile" hidden></secttion>
+
+    <section id="contact" hidden></section>
+
+    <section id="settings" hidden>
       <div id="options" >
         <div class="options">
           <h3>Уведомления</h3>
@@ -871,6 +876,8 @@
         </h5>
       </div>
     </section>
+
+    <section id="notifications" hidden></section>
 
     <footer>
       <nav>
