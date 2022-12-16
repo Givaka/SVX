@@ -31,12 +31,10 @@
 
 
 </head>
-<!-- TODO Сделать прелоадер -->
 
 <body>
-  <div id="enterFrame" >
+  <div id="enterFrame" hidden>
     <header>
-      <!-- TODO Сделать задержку -->
       <progress id="preloader" max="100" value="0"></progress>
       
       <div class="auntifications">
@@ -162,8 +160,8 @@
     </section>
   </div>
 
-  <main hidden>
-    <header hidden> 
+  <main >
+    <header > 
       <div class="menu">
         <div class="title">SVX</div>
         <div class="notifications hide-before"></div>
@@ -828,21 +826,36 @@
       </article>
     </section>
 
-    <section id="settings" hidden>
+
+    <section id="settings">
       <div>
-        <h3>Уведомления</h3>
         <div class="options">
-        <!-- TODO Задейзайнить переключатель -->
+          <h3>Уведомления</h3>
           <form action="#">
             <label for="sound">Звук</label>
-            <input type="radio" name="sound" id="sound">
+            <label for="sound" class="ios-checkbox">
+              <input type="checkbox" name="option" id="sound">
+              <label for="sound"></label>
+            </label>
             <label for="vibration">Вибрация</label>
-            <input type="radio" name="vibration" id="vibration">
+            <label for="vibration" class="ios-checkbox">
+              <input type="checkbox" name="option" id="vibration">
+              <label for="vibration"></label>
+            </label>
           </form>
         </div>
+        <div class="who-did">
+          <div>
+            <h6>Приложение задизайнено</h5>
+            <img src="/image/Logo.svg" alt="">
+          </div>
+        </div>
+        <div class ="btn-group">
+          <a class="btn">Служба поддержки</a>
+          <a class="btn enable">Выйти</a>
+          <a href="#">Удалить аккаунт</a>
+        </div>
       </div>
-      <div></div>
-      <div></div>
     </section>
 
     <footer>

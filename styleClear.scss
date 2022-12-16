@@ -32,7 +32,7 @@ strong {
   font-weight: bold;
 }
 
-input {
+input, button {
   outline: none;
   border: none;
 }
@@ -52,7 +52,7 @@ a {
 }
 
 a:hover {
-  text-decoration: underline;
+  text-decoration: none;
 }
 
 [hidden] {
