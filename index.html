@@ -32,15 +32,15 @@
 </head>
 
 <body>
-  <div id="enterFrame" hidden>
+  <div id="enterFrame" >
     <header>
       <progress id="preloader" max="100" value="0"></progress>
       
       <div class="auntifications">
         <input type="radio" name="auntification" id="enter" class="enter" checked>
-        <label for="enter" onclick="swapPage('registrationPage', 'entryPage' ,)">Вход</a></label>
+        <label for="enter" onclick="swapPage('registrationPage', 'entryPage', {})">Вход</a></label>
         <input type="radio" name="auntification" id="registration" class="registration">
-        <label for="registration" onclick="swapPage('entryPage', 'registrationPage')">Регистрация</a></label>
+        <label for="registration" onclick="swapPage('entryPage', 'registrationPage', {})">Регистрация</a></label>
       </div>
       <div class="logo">
         <div class="title">SVX</div>
@@ -71,7 +71,7 @@
           Неверный номер телефона, пароль или такого аккаунта не существует
         </div>
 
-        <input type="submit" value="Войти" class="btn">
+        <input type="submit" value="Войти" class="btn enable" onclick="pageSwap()">
       </form>
 
       <form action="#" id="restore-password" hidden>
@@ -81,11 +81,10 @@
             autocomplete="off">
         </div>
 
-        <input type="submit" value="Прислать пароль в sms" class="btn">
+        <input type="submit" value="Прислать пароль в sms" class="btn enable">
       </form>
     </section>
 
-    <!-- TODO Разобраться с паказом пароля -->
     <section id="registrationPage" hidden>
       <form action="#">
         <div class="enterInput">
@@ -124,7 +123,7 @@
           <label for="agreement-chec">Я принимаю условия <a href="#">пользовательского соглашения</a></label>
         </div>
 
-        <input type="submit" value="Зарегистрироваться" class="btn">
+        <input type="submit" value="Зарегистрироваться" class="btn enable">
       </form>
     </section>
 
@@ -159,7 +158,7 @@
     </section>
   </div>
 
-  <main >
+  <main hidden>
     <header > 
       <div class="menu">
         <div class="title">SVX</div>
@@ -408,7 +407,7 @@
             <li>Чистка ковриков</li>
             <li>Чернение колес</li>
           </ul>
-          <div class="btn">Записаться</div>
+          <div class="btn enable">Записаться</div>
         </div>
       </article>
       <article class="service" id="washing-2" hidden>
@@ -426,7 +425,7 @@
             <li>Турбосушка кузова автомобиля (сушка горячим воздухом)</li>
             <li>Чернение колес</li>
           </ul>
-          <div class="btn">Записаться</div>
+          <div class="btn enable">Записаться</div>
         </div>
       </article>
 
@@ -447,7 +446,7 @@
             <li>Турбосушка кузова</li>
             <li>Чернение колес</li>
           </ul>
-          <div class="btn">Записаться</div>
+          <div class="btn enable">Записаться</div>
         </div>
       </article>
 
@@ -464,7 +463,7 @@
             <li>Чистка ковриков</li>
             <li>Чистка стекол</li>
           </ul>
-          <div class="btn">Записаться</div>
+          <div class="btn enable">Записаться</div>
         </div>
       </article>
       <article class="service" id="care-2" hidden>
@@ -480,7 +479,7 @@
             <li>Обработка изделий из кожи кондиционером</li>
             <li>Чистка ковриков</li>
           </ul>
-          <div class="btn">Записаться</div>
+          <div class="btn enable">Записаться</div>
         </div>
       </article>
 
@@ -496,7 +495,7 @@
             <li>Формирование глубокого, зеркального блеска</li>
             <li>Грязе-водоотталкивающим эффект</li>
           </ul>
-          <div class="btn">Оставить заявку</div>
+          <div class="btn enable">Оставить заявку</div>
         </div>
       </article>
 
@@ -511,7 +510,7 @@
             <li>Защита кожаной отделки интерьера на срок до 12 месяцев</li>
             <li>Защита кожи от всех типов загрязнений, покрасов, выгорания (кожа не становится скользкой или лоснящейся)</li>
           </ul>
-          <div class="btn">Оставить заявку</div>
+          <div class="btn enable">Оставить заявку</div>
         </div>
       </article>
 
@@ -533,7 +532,7 @@
             <li>Чернение колес</li>
             <li>Озонирование салона</li>
           </ul>
-          <div class="btn">Оставить заявку</div>
+          <div class="btn enable">Оставить заявку</div>
         </div>
       </article>
       <article class="service" id="dry-cleaning-2" hidden>
@@ -550,7 +549,7 @@
             <li>Обработка изделий из кожи кремом консервантом (защита от загрязнений)</li>
             <li>Чернение колес</li>
           </ul>
-          <div class="btn">Оставить заявку</div>
+          <div class="btn enable">Оставить заявку</div>
         </div>
       </article>
       <article class="service" id="dry-cleaning-3" hidden>
@@ -560,7 +559,7 @@
         <div>
           <h2>Химчистка обшивки двери, подлокотника, либо стойки крыши</h2>
           <p class="price">от 1050 ₽</p>
-          <div class="btn">Оставить заявку</div>
+          <div class="btn enable">Оставить заявку</div>
         </div>
       </article>
       <article class="service" id="dry-cleaning-4" hidden>
@@ -573,7 +572,7 @@
           <ul>
             <li>Текстиль</li>
           </ul>
-          <div class="btn">Оставить заявку</div>
+          <div class="btn enable">Оставить заявку</div>
         </div>
       </article>
       <article class="service" id="dry-cleaning-5" hidden>
@@ -586,7 +585,7 @@
           <ul>
             <li>Темная кожа</li>
           </ul>
-          <div class="btn">Оставить заявку</div>
+          <div class="btn enable">Оставить заявку</div>
         </div>
       </article>
       <article class="service" id="dry-cleaning-6" hidden>
@@ -599,7 +598,7 @@
           <ul>
             <li>Светлая кожа, анилиновая, алькантара</li>
           </ul>
-          <div class="btn">Оставить заявку</div>
+          <div class="btn enable">Оставить заявку</div>
         </div>
       </article>
       <article class="service" id="dry-cleaning-7" hidden>
@@ -612,7 +611,7 @@
           <ul>
             <li>Текстиль</li>
           </ul>
-          <div class="btn">Оставить заявку</div>
+          <div class="btn enable">Оставить заявку</div>
         </div>
       </article>
       <article class="service" id="dry-cleaning-8" hidden>
@@ -625,7 +624,7 @@
           <ul>
             <li>Темная кожа</li>
           </ul>
-          <div class="btn">Оставить заявку</div>
+          <div class="btn enable">Оставить заявку</div>
         </div>
       </article>
       <article class="service" id="dry-cleaning-9" hidden>
@@ -638,7 +637,7 @@
           <ul>
             <li>Светлая кожа, анилиновая, алькантара</li>
           </ul>
-          <div class="btn">Оставить заявку</div>
+          <div class="btn enable">Оставить заявку</div>
         </div>
       </article>
       <article class="service" id="dry-cleaning-10" hidden>
@@ -649,7 +648,7 @@
           <h2>Химчистка потолка</h2>
           <p class="price">от 1050 ₽</p>
           <ul><li>Включая солнцезащитные козырьки</li></ul>
-          <div class="btn">Оставить заявку</div>
+          <div class="btn enable">Оставить заявку</div>
         </div>
       </article>
       <article class="service" id="dry-cleaning-11" hidden>
@@ -659,7 +658,7 @@
         <div>
           <h2>Химчистка коврового покрытия пола салона</h2>
           <p class="price">от 1050 ₽</p>
-          <div class="btn">Оставить заявку</div>
+          <div class="btn enable">Оставить заявку</div>
         </div>
       </article>
       <article class="service" id="dry-cleaning-12" hidden>
@@ -669,7 +668,7 @@
         <div>
           <h2>Химчистка багажника</h2>
           <p class="price">от 1050 ₽</p>
-          <div class="btn">Оставить заявку</div>
+          <div class="btn enable">Оставить заявку</div>
         </div>
       </article>
 
@@ -681,7 +680,7 @@
           <h2>Оклейка кузова автомобиля</h2>
           <p class="price">от 1050 ₽</p>
           <ul><li>Полностью</li></ul>
-          <div class="btn">Оставить заявку</div>
+          <div class="btn enable">Оставить заявку</div>
         </div>
       </article>
       <article class="service" id="film-2" hidden>
@@ -694,7 +693,7 @@
           <ul>
             <li>Без крыши</li>
           </ul>
-          <div class="btn">Оставить заявку</div>
+          <div class="btn enable">Оставить заявку</div>
         </div>
       </article>
       <article class="service" id="film-3" hidden>
@@ -707,7 +706,7 @@
           <ul>
             <li>Капот, бампер, крылья, фары, зеркала, стойки лобового стекла, полоса на крышу</li>
           </ul>
-          <div class="btn">Оставить заявку</div>
+          <div class="btn enable">Оставить заявку</div>
         </div>
       </article>
       <article class="service" id="film-4" hidden>
@@ -720,7 +719,7 @@
           <ul>
             <li>Капот, бампер, крылья, фары, зеркала</li>
           </ul>
-          <div class="btn">Оставить заявку</div>
+          <div class="btn enable">Оставить заявку</div>
         </div>
       </article>
       <article class="service" id="film-5" hidden>
@@ -730,7 +729,7 @@
         <div>
           <h2>Оклейка капота и бампера</h2>
           <p class="price">от 1050 ₽</p>
-          <div class="btn">Оставить заявку</div>
+          <div class="btn enable">Оставить заявку</div>
         </div>
       </article>
       <article class="service" id="film-6" hidden>
@@ -740,7 +739,7 @@
         <div>
           <h2>Оклейка капота</h2>
           <p class="price">от 1050 ₽</p>
-          <div class="btn">Оставить заявку</div>
+          <div class="btn enable">Оставить заявку</div>
         </div>
       </article>
       <article class="service" id="film-7" hidden>
@@ -750,7 +749,7 @@
         <div>
           <h2>Оклейка бампера</h2>
           <p class="price">от 1050 ₽</p>
-          <div class="btn">Оставить заявку</div>
+          <div class="btn enable">Оставить заявку</div>
         </div>
       </article>
       <article class="service" id="film-8" hidden>
@@ -760,7 +759,7 @@
         <div>
           <h2>Оклейка крыла</h2>
           <p class="price">от 1050 ₽</p>
-          <div class="btn">Оставить заявку</div>
+          <div class="btn enable">Оставить заявку</div>
         </div>
       </article>
       <article class="service" id="film-9" hidden>
@@ -770,7 +769,7 @@
         <div>
           <h2>Оклейка двери</h2>
           <p class="price">от 1050 ₽</p>
-          <div class="btn">Оставить заявку</div>
+          <div class="btn enable">Оставить заявку</div>
         </div>
       </article>
       <article class="service" id="film-10" hidden>
@@ -780,7 +779,7 @@
         <div>
           <h2>Оклейка крышки багажника</h2>
           <p class="price">от 1050 ₽</p>
-          <div class="btn">Оставить заявку</div>
+          <div class="btn enable">Оставить заявку</div>
         </div>
       </article>
       <article class="service" id="film-11" hidden>
@@ -790,7 +789,7 @@
         <div>
           <h2>Оклейка крыши</h2>
           <p class="price">от 1050 ₽</p>
-          <div class="btn">Оставить заявку</div>
+          <div class="btn enable">Оставить заявку</div>
         </div>
       </article>
       <article class="service" id="film-12" hidden>
@@ -800,7 +799,7 @@
         <div>
           <h2>Оклейка наружнего порога</h2>
           <p class="price">от 1050 ₽</p>
-          <div class="btn">Оставить заявку</div>
+          <div class="btn enable">Оставить заявку</div>
         </div>
       </article>
       <article class="service" id="film-13" hidden>
@@ -810,7 +809,7 @@
         <div>
           <h2>Оклейка внутреннего порога</h2>
           <p class="price">от 1050 ₽</p>
-          <div class="btn">Оставить заявку</div>
+          <div class="btn enable">Оставить заявку</div>
         </div>
       </article>
       <article class="service" id="film-14" hidden>
@@ -820,7 +819,7 @@
         <div>
           <h2>Оклейка уширителя арки</h2>
           <p class="price">от 1050 ₽</p>
-          <div class="btn">Оставить заявку</div>
+          <div class="btn enable">Оставить заявку</div>
         </div>
       </article>
     </section>
@@ -875,9 +874,9 @@
 
     <footer>
       <nav>
-        <a href="#" class="menu" id="contact"></a>
-        <a href="#" class="menu" id="home"></a>
-        <a href="#" class="menu" id="profile"></a>
+        <a href="#" class="menu" id="contact" onclick="footerSwap('contact')"></a>
+        <a href="#" class="menu" id="home" onclick="footerSwap('services')"></a>
+        <a href="#" class="menu" id="profile" onclick="footerSwap('profile')"></a>
       </nav>
     </footer>
   </main>
