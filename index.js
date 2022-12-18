@@ -88,14 +88,16 @@ function seeService(when, inside=true) {
     back.href = "#";
     back.classList.add('back');
     back.setAttribute("service", when);
-    back.onclick = function () { seeService(this, false); }
+    back.onclick = function () {
+      back.remove();
+      seeService(this, false); 
+    }
     menu.prepend(back);
     menu.getElementsByClassName("title")[0].hidden = true;
     document.getElementById("services").hidden = true;
     document.getElementById("descriptions").hidden = false;
     document.getElementById(when).hidden = false;
   } else{
-    menu.getElementsByClassName("back")[0].remove();
     menu.getElementsByClassName("title")[0].hidden = false;
     document.getElementById(when).hidden = true;
     document.getElementById("descriptions").hidden = true;
@@ -103,14 +105,52 @@ function seeService(when, inside=true) {
   }
 }
 
-
 // Переход со скрытием всех открытых
 function footerSwap(to) {
-  let allSelection = document.getElementsByTagName('section');
+  document.querySelector('header .notifications').hidden = false;
+  if (document.querySelector('header .settings'))
+    document.querySelector('header .settings').remove();
 
-  for (let selection of allSelection) {
+  for (let selection of document.getElementsByTagName('section'))
     selection.hidden = true;
+
+  clearService();
+
+  document.getElementById(to).hidden = false;
+}
+
+// Переход на профиль
+function toProfile() {
+  for (let selection of document.getElementsByTagName("section"))
+    selection.hidden = true;
+
+  let menu = document.querySelector('header>.menu');
+  menu.getElementsByClassName('notifications')[0].hidden = true;
+
+  if (menu.querySelectorAll('.settings').length < 1){
+    let settings = document.createElement('a');
+    settings.classList.add('settings');
+    settings.href = '#';
+    settings.onclick = function () {
+      settings.remove();
+      swapPage('profile','settings', {});
+    }
+    menu.append(settings);
   }
+}
+
+function toNotifications(){
+  for (let selection of document.getElementsByTagName('section'))
+    selection.hidden = true;
+
+  clearService();
+  document.querySelector('header .notifications').hidden = true;
+  document.getElementById('notifications').hidden = false;
+}
+
+
+// Уберает все открытые страницы с описанием услуг
+function clearService() {
   for (let service of document.getElementsByClassName("service")) {
     service.hidden = true;
 
@@ -121,6 +161,4 @@ function footerSwap(to) {
       menu.getElementsByClassName("back")[0].remove();
     }
   }
-
-  document.getElementById(to).hidden = false;
 }

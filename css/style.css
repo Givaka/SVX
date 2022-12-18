@@ -20,172 +20,6 @@ body > *, body > * > footer {
   margin: 0 auto;
 }
 
-main header {
-  flex-direction: column;
-  padding: 1rem 1rem;
-}
-main header .menu {
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  font-size: 1.5em;
-}
-main header .menu .back {
-  width: 2rem;
-  height: 2rem;
-  content: url("/image/icons/back.svg");
-}
-main nav {
-  display: flex;
-  flex-direction: row;
-  overflow-x: auto;
-  padding: 0.7rem 1.1rem;
-  font-weight: 500;
-}
-main nav input {
-  display: none;
-}
-main nav input:checked + label {
-  background-color: #E52335;
-}
-main nav label {
-  padding: 0.6rem 0.9rem;
-  margin: 0 0.3rem;
-  border-radius: 1em;
-  background-color: #3A3939;
-  text-align: center;
-  cursor: pointer;
-  white-space: nowrap;
-}
-main section {
-  padding-top: 0;
-  padding-bottom: 6rem;
-}
-main section#descriptions {
-  padding: 0;
-  padding-bottom: 1rem;
-}
-main section#settings {
-  height: 70vh;
-}
-main section#settings > div {
-  display: flex;
-  flex-direction: column;
-  height: 95%;
-  padding: 1rem;
-  justify-content: center;
-}
-main section#settings > div > div {
-  margin: 0;
-  padding: 0;
-  background-color: #1E1E1E;
-}
-main section#settings > div > div.who-did {
-  position: relative;
-  flex-grow: 1;
-  padding-top: 2em;
-}
-main section#settings > div > div.who-did > div {
-  position: absolute;
-  bottom: 0;
-  padding: 0;
-  margin: 0;
-}
-main section#settings .options {
-  margin: 0;
-  margin-top: 1rem;
-  font-size: 1rem;
-}
-main section#settings .options form {
-  display: grid;
-  grid-template-columns: 3fr -webkit-min-content;
-  grid-template-columns: 3fr min-content;
-  row-gap: 1rem;
-}
-main section#settings .options form label {
-  align-self: center;
-}
-main section#settings .options form .ios-checkbox {
-  position: relative;
-  width: 2.8rem;
-  height: 1.7rem;
-  justify-self: center;
-  background-color: #F2F2F2;
-  border-radius: 30%/50%;
-  cursor: pointer;
-}
-main section#settings .options form .ios-checkbox:has(input[type=checkbox]:checked) {
-  background-color: #34C759;
-}
-main section#settings .options form .ios-checkbox input[type=checkbox] {
-  visibility: hidden;
-}
-main section#settings .options form .ios-checkbox input[type=checkbox]:checked + label {
-  right: 0.1rem;
-}
-main section#settings .options form .ios-checkbox label {
-  width: 1.5rem;
-  height: 1.5rem;
-  position: absolute;
-  right: 1.15rem;
-  top: 0.1rem;
-  z-index: 1;
-  border-radius: 50%;
-  background-color: #fff;
-  box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.15), 0px 3px 1px rgba(0, 0, 0, 0.06);
-  transition: all 0.3s ease;
-}
-main section > div {
-  padding: 0;
-}
-main section > div > div {
-  background-color: #3A3939;
-  border-radius: 1.2rem;
-  margin: 0.5rem 1rem;
-  padding: 0.7rem;
-  padding-bottom: 1rem;
-  font-weight: 500;
-}
-main section > div > div + div {
-  margin-top: 1rem;
-}
-main section > div > div .preview {
-  width: 100%;
-  margin-bottom: 1.8rem;
-  background-color: #3A3939;
-  filter: drop-shadow(0px 4px 30px rgba(0, 0, 0, 0.2));
-}
-main section > div > div .preview::after {
-  content: attr(time-delay);
-  position: absolute;
-  right: 1em;
-  bottom: -0.9em;
-  min-width: 4.6rem;
-  padding: 0.6rem 0.9rem;
-  margin-top: 5rem;
-  border-radius: 1em;
-  background-color: #E52335;
-  box-shadow: 0px 4px 30px rgba(0, 0, 0, 0.25);
-  text-align: center;
-  font-size: 1rem;
-}
-main section > div > div .preview img {
-  width: 100%;
-  border-radius: 0.7rem;
-}
-main section > div > div .preview + div {
-  line-height: 1.2em;
-}
-main section > div > div .sub-text {
-  margin-top: 0.5rem;
-  font-weight: 500;
-  font-size: 0.7rem;
-  line-height: 0.8rem;
-  color: rgba(255, 255, 255, 0.4);
-}
-
 header {
   height: 100%;
   display: flex;
@@ -196,7 +30,7 @@ header {
 }
 header .title {
   font-weight: 800;
-  line-height: 1;
+  line-height: 1.7;
   letter-spacing: 0.1em;
 }
 header .sub-title {
@@ -258,19 +92,317 @@ header progress[value="100"] ~ .auntifications {
           animation: fadeIn 1s both;
 }
 
-#enterFrame {
-  height: 100%;
+main header {
+  flex-direction: column;
+  padding: 1rem 1rem;
 }
-
-#entryPage {
+main header .menu {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1.5em;
+}
+main header .menu .back {
+  width: 2rem;
+  height: 2rem;
+  content: url("/image/icons/back.svg");
+}
+main nav {
+  display: flex;
+  flex-direction: row;
+  overflow-x: auto;
+  padding: 0.7rem 0rem;
+  font-weight: 500;
+}
+main nav input {
   display: none;
 }
-header:has(progress[value="100"]) + #entryPage {
-  display: block;
+main nav input:checked + label {
+  background-color: #E52335;
+}
+main nav label {
+  padding: 0.6rem 0.9rem;
+  margin: 0 0.3rem;
+  border-radius: 1em;
+  background-color: #3A3939;
+  text-align: center;
+  cursor: pointer;
+  white-space: nowrap;
+}
+main section {
+  padding-top: 0;
+  padding-bottom: 6rem !important;
+  padding: 1rem;
+}
+main section#services p {
+  margin-top: 1rem;
+  margin-bottom: 0.7rem;
+}
+main section#services > div > div {
+  padding: 0.5rem 0.5rem 1rem 0.5rem;
+}
+main section#descriptions {
+  padding: 0;
+  padding-bottom: 0 !important;
+}
+main section#settings > div {
+  display: flex;
+  flex-direction: column;
+  height: 95%;
+  justify-content: center;
+}
+main section#settings > div > div {
+  background-color: #1E1E1E;
+}
+main section#settings > div > div.who-did {
+  position: relative;
+  flex-grow: 1;
+  padding-top: 2em;
+}
+main section#settings > div > div.who-did > div {
+  position: absolute;
+  bottom: 0;
+  padding: 0;
+  margin: 0;
+}
+main section#settings .options {
+  margin: 0;
+  margin-top: 1rem;
+  font-size: 1rem;
+}
+main section#settings .options form {
+  margin-top: 1rem;
+  display: grid;
+  grid-template-columns: 3fr -webkit-min-content;
+  grid-template-columns: 3fr min-content;
+  row-gap: 1rem;
+}
+main section#settings .options form label {
+  align-self: center;
+  line-height: 2.5;
+}
+main section#settings .options form .ios-checkbox {
+  position: relative;
+  width: 2.8rem;
+  height: 1.7rem;
+  justify-self: center;
+  background-color: #F2F2F2;
+  border-radius: 30%/50%;
+  cursor: pointer;
+}
+main section#settings .options form .ios-checkbox:has(input[type=checkbox]:checked) {
+  background-color: #34C759;
+}
+main section#settings .options form .ios-checkbox input[type=checkbox] {
+  visibility: hidden;
+}
+main section#settings .options form .ios-checkbox input[type=checkbox]:checked + label {
+  right: 0.1rem;
+}
+main section#settings .options form .ios-checkbox label {
+  width: 1.5rem;
+  height: 1.5rem;
+  position: absolute;
+  right: 1.15rem;
+  top: 0.1rem;
+  z-index: 1;
+  border-radius: 50%;
+  background-color: #fff;
+  box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.15), 0px 3px 1px rgba(0, 0, 0, 0.06);
+  transition: all 0.3s ease;
+}
+main section#notifications {
+  padding: 1rem;
+}
+main section#notifications .notification {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem 0.5rem;
+  background-color: #3A3939;
+  border-radius: 1rem;
+  font-weight: 500;
+}
+main section#notifications .notification + .notification {
+  margin-top: 1rem;
+}
+main section#notifications .notification h4, main section#notifications .notification div {
+  margin: 0.25rem;
+}
+main section#notifications .notification div {
+  font-size: 0.7rem;
+  padding: 0;
+  color: rgba(255, 255, 255, 0.4);
+}
+main section#notifications .notification .btn {
+  margin-top: 1rem;
+  margin-bottom: -0.5rem;
+}
+main section#appointment, main section#records {
+  display: flex;
+  flex-direction: column;
+}
+main section#appointment form > div + div, main section#records form > div + div {
+  margin-top: 2rem;
+}
+main section#appointment h4, main section#records h4 {
+  margin-bottom: 0.6rem;
+}
+main section#appointment h5, main section#records h5 {
+  font-weight: 500;
+  margin-bottom: 0.6rem;
+}
+main section#appointment h6, main section#records h6 {
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.3);
+}
+main section#appointment input[type=radio], main section#records input[type=radio] {
+  display: none;
+}
+main section#appointment input[type=radio]:checked + label, main section#appointment input[type=radio]:checked + label > div, main section#records input[type=radio]:checked + label, main section#records input[type=radio]:checked + label > div {
+  background-color: #E52335;
+}
+main section#appointment label, main section#records label {
+  border-radius: 1rem;
+  background-color: #3A3939;
+  text-align: center;
+}
+main section#appointment label:not(:first-child), main section#records label:not(:first-child) {
+  margin-right: 0.3rem;
+}
+main section#appointment > div + div, main section#records > div + div {
+  margin-top: 1rem;
+}
+main section#appointment .date .slider label, main section#records .date .slider label {
+  padding: 1.5rem 0.6rem;
+}
+main section#appointment .date .slider label p, main section#records .date .slider label p {
+  width: 1.9rem;
+}
+main section#appointment .date .slider label p + p, main section#records .date .slider label p + p {
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 0.2rem solid #ffffff;
+}
+main section#appointment .time label, main section#records .time label {
+  padding: 0.8rem 1.16rem;
+}
+main section#appointment .time div + div, main section#records .time div + div {
+  margin-top: 1rem;
+}
+main section#appointment .auto, main section#records .auto {
+  flex-direction: column;
+}
+main section#appointment .auto label, main section#records .auto label {
+  padding: 1rem;
+}
+main section#appointment .auto label + input + label, main section#records .auto label + input + label {
+  margin-top: 1rem;
+}
+main section#appointment .salon label, main section#records .salon label {
+  text-align: left;
+}
+main section#appointment .salon label > div, main section#records .salon label > div {
+  padding: 0.5rem 0.5rem 1rem 0.5rem;
+  border-radius: 1.2rem;
+  font-weight: 500;
+  background-color: #3A3939;
+}
+main section#appointment .salon label > div + div, main section#records .salon label > div + div {
+  margin-top: 1rem;
+}
+main section#appointment .slider, main section#records .slider {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+}
+main section#appointment .when .slider, main section#appointment .remind .slider, main section#records .when .slider, main section#records .remind .slider {
+  padding: 0;
+  background-color: #1E1E1E;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+main section#appointment .when .slider div, main section#appointment .when .slider label, main section#appointment .remind .slider div, main section#appointment .remind .slider label, main section#records .when .slider div, main section#records .when .slider label, main section#records .remind .slider div, main section#records .remind .slider label {
+  padding: 0.6rem 1.5rem;
+  border-radius: 1rem;
+  font-size: 0.8rem;
+  background-color: #3A3939;
+  margin-top: 0.3rem;
+}
+main section#appointment .when .slider div + div, main section#appointment .when .slider div + input + label, main section#appointment .when .slider label + div, main section#appointment .when .slider label + input + label, main section#appointment .remind .slider div + div, main section#appointment .remind .slider div + input + label, main section#appointment .remind .slider label + div, main section#appointment .remind .slider label + input + label, main section#records .when .slider div + div, main section#records .when .slider div + input + label, main section#records .when .slider label + div, main section#records .when .slider label + input + label, main section#records .remind .slider div + div, main section#records .remind .slider div + input + label, main section#records .remind .slider label + div, main section#records .remind .slider label + input + label {
+  margin-left: 0.3rem;
+}
+main section#appointment .where > div, main section#records .where > div {
+  padding: 0.5rem 0.5rem 1rem 0.5rem;
+}
+main section#EROOR-successful h2 + h2, main section#EROOR-successful h2 + h4 {
+  margin-top: 1rem;
+}
+main section#EROOR-successful > div {
+  display: flex;
+  flex-direction: column;
+  margin-top: 10vh;
+}
+main section > div {
+  padding: 0;
+}
+main section > div > div {
+  padding-bottom: 1rem;
+  background-color: #3A3939;
+  border-radius: 1.2rem;
+  font-weight: 500;
+}
+main section > div > div + div {
+  margin-top: 1rem;
+}
+main section .preview {
+  width: 100%;
+  margin-bottom: 1.8rem;
+  filter: drop-shadow(0px 4px 30px rgba(0, 0, 0, 0.2));
+}
+main section .preview::after {
+  content: attr(time-delay);
+  position: absolute;
+  right: 1em;
+  bottom: -0.9em;
+  min-width: 4.6rem;
+  padding: 0.6rem 0.9rem;
+  margin-top: 5rem;
+  border-radius: 1em;
+  background-color: #E52335;
+  box-shadow: 0px 4px 30px rgba(0, 0, 0, 0.25);
+  text-align: center;
+  font-size: 1rem;
+}
+main section .preview img {
+  width: 100%;
+  border-radius: 0.7rem;
+}
+main section .preview + div {
+  line-height: 1.2em;
+  padding-left: 0.5rem;
+}
+main section .sub-text {
+  margin-top: 0.5rem;
+  font-weight: 500;
+  font-size: 0.7rem;
+  line-height: 0.8rem;
+  color: rgba(255, 255, 255, 0.4);
+  padding-left: 0.5rem;
 }
 
 section {
   padding: 2rem 0;
+}
+section#entryPage, section#registrationPage {
+  padding: 3rem 1rem;
+}
+header:has(progress[value="100"]) + section#entryPage, header:has(progress[value="100"]) + section#registrationPage {
+  display: block;
+}
+section#entryPage {
+  display: none;
 }
 section#agreementPage {
   font-weight: 400;
@@ -287,9 +419,6 @@ section#agreementPage a div {
 section form {
   display: flex;
   flex-direction: column;
-}
-section > * {
-  padding: 0.5rem 1.5rem;
 }
 section input {
   background-color: #1E1E1E;
@@ -332,7 +461,6 @@ section .enterInput .inputInline .password-control.view {
 
 article {
   padding: 0;
-  height: calc(100% + 18vh);
 }
 article > * {
   position: relative;
@@ -406,7 +534,7 @@ footer nav {
   align-items: center;
 }
 footer nav a {
-  width: 1.7rem;
+  width: 3rem;
   height: 1.7rem;
 }
 footer nav a#contact {
@@ -471,6 +599,17 @@ h6 {
   font-size: 0.6rem;
 }
 
+#enterFrame {
+  height: 100%;
+}
+#enterFrame .btn:first-of-type {
+  margin-top: 3rem;
+}
+
+#deleteAccount h5 {
+  color: rgba(255, 255, 255, 0.3);
+}
+
 .btn {
   width: 100%;
   margin-bottom: 1rem;
@@ -527,8 +666,8 @@ h6 {
 }
 
 .notifications {
-  width: 2rem;
-  height: 2.86rem;
+  width: 3rem;
+  height: 2.5rem;
   background-image: url("/image/icons/notifications.svg");
   background-size: contain;
 }
@@ -554,7 +693,12 @@ h6 {
   display: flex;
   flex-direction: column;
 }
+.btn-group .btn:first-of-type {
+  margin-top: 0;
+}
 
-#deleteAccount h5 {
-  color: rgba(255, 255, 255, 0.4);
+.settings {
+  width: 3rem;
+  height: 2.2rem;
+  background-image: url("/image/icons/settings.svg");
 }

@@ -11,7 +11,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;800&display=swap" rel="stylesheet">
 
 
   <!-- Компоненты стиля -->
@@ -159,14 +159,14 @@
   </div>
 
   <main id="main" hidden>
-    <header > 
+    <header> 
       <div class="menu">
         <div class="title">SVX</div>
-        <div class="notifications hide-before"></div>
+        <a href="#" class="notifications hide-before" onclick="toNotifications()"></a>
       </div>
     </header>
 
-    <section id="services">
+    <section id="services" >
       <nav>
         <input type="radio" name="service" id="washing" checked>
         <label for="washing" onclick="sliderPage('all-service','washingPage')">Мойка кузова</label>
@@ -184,7 +184,6 @@
       <p>Выберите услугу</p>
       <div id="washingPage" class="all-service">
         <div onclick="seeService(this)" service="washing-1">
-          <div class="clickArea"> </div>
           <div class="preview" time-delay="35-60 мин"><img
               src="/image/service/preview/Деликатная мойка кузова в 2 этапа.png"></div>
           <div>Деликатная мойка кузова в 2 этапа</div>
@@ -407,7 +406,7 @@
             <li>Чистка ковриков</li>
             <li>Чернение колес</li>
           </ul>
-          <div class="btn enable">Записаться</div>
+          <div class="btn enable" onclick="swapPage('descriptions', 'appointment', {})">Записаться</div>
         </div>
       </article>
       <article class="service" id="washing-2" hidden>
@@ -425,7 +424,7 @@
             <li>Турбосушка кузова автомобиля (сушка горячим воздухом)</li>
             <li>Чернение колес</li>
           </ul>
-          <div class="btn enable">Записаться</div>
+          <div class="btn enable" onclick="swapPage('descriptions', 'appointment', {})">Записаться</div>
         </div>
       </article>
 
@@ -446,7 +445,7 @@
             <li>Турбосушка кузова</li>
             <li>Чернение колес</li>
           </ul>
-          <div class="btn enable">Записаться</div>
+          <div class="btn enable" onclick="swapPage('descriptions', 'appointment', {})">Записаться</div>
         </div>
       </article>
 
@@ -463,7 +462,7 @@
             <li>Чистка ковриков</li>
             <li>Чистка стекол</li>
           </ul>
-          <div class="btn enable">Записаться</div>
+          <div class="btn enable" onclick="swapPage('descriptions', 'appointment', {})">Записаться</div>
         </div>
       </article>
       <article class="service" id="care-2" hidden>
@@ -479,7 +478,7 @@
             <li>Обработка изделий из кожи кондиционером</li>
             <li>Чистка ковриков</li>
           </ul>
-          <div class="btn enable">Записаться</div>
+          <div class="btn enable" onclick="swapPage('descriptions', 'appointment', {})">Записаться</div>
         </div>
       </article>
 
@@ -824,9 +823,168 @@
       </article>
     </section>
 
-    <section id="appointment" hidden></section>
+    <section id="appointment" hidden>
+      <form action="">
+        <div class="date">
+          <h4>Выбрать дату</h4>
+          <div class="slider">
+            <input type="radio" name="date" id="01" checked><label for="01"><p>01</p><p>чт</p></label>
+            <input type="radio" name="date" id="02"><label for="02"><p>02</p><p>пт</p></label>
+            <input type="radio" name="date" id="03"><label for="03"><p>03</p><p>сб</p></label>
+            <input type="radio" name="date" id="04"><label for="04"><p>04</p><p>вс</p></label>
+            <input type="radio" name="date" id="05"><label for="05"><p>05</p><p>пн</p></label>
+            <input type="radio" name="date" id="06"><label for="06"><p>06</p><p>вт</p></label>
+            <input type="radio" name="date" id="07"><label for="07"><p>07</p><p>ср</p></label>
+            <input type="radio" name="date" id="08"><label for="08"><p>08</p><p>чт</p></label>
+            <input type="radio" name="date" id="09"><label for="09"><p>09</p><p>пт</p></label>
+            <input type="radio" name="date" id="10"><label for="10"><p>10</p><p>сб</p></label>
+            <input type="radio" name="date" id="11"><label for="11"><p>11</p><p>вс</p></label>
+            <input type="radio" name="date" id="12"><label for="12"><p>12</p><p>пн</p></label>
+            <input type="radio" name="date" id="13"><label for="13"><p>13</p><p>вт</p></label>
+            <input type="radio" name="date" id="14"><label for="14"><p>14</p><p>ср</p></label>
+            <input type="radio" name="date" id="15"><label for="15"><p>15</p><p>чт</p></label>
+            <input type="radio" name="date" id="16"><label for="16"><p>16</p><p>пт</p></label>
+            <input type="radio" name="date" id="17"><label for="17"><p>17</p><p>сб</p></label>
+            <input type="radio" name="date" id="18"><label for="18"><p>18</p><p>вс</p></label>
+            <input type="radio" name="date" id="19"><label for="19"><p>19</p><p>пн</p></label>
+            <input type="radio" name="date" id="20"><label for="20"><p>20</p><p>вт</p></label>
+            <input type="radio" name="date" id="21"><label for="21"><p>21</p><p>ср</p></label>
+            <input type="radio" name="date" id="22"><label for="22"><p>22</p><p>чт</p></label>
+            <input type="radio" name="date" id="23"><label for="23"><p>23</p><p>пт</p></label>
+            <input type="radio" name="date" id="24"><label for="24"><p>24</p><p>сб</p></label>
+            <input type="radio" name="date" id="25"><label for="25"><p>25</p><p>вс</p></label>
+            <input type="radio" name="date" id="26"><label for="26"><p>26</p><p>пн</p></label>
+            <input type="radio" name="date" id="27"><label for="27"><p>27</p><p>вт</p></label>
+            <input type="radio" name="date" id="28"><label for="28"><p>28</p><p>ср</p></label>
+          </div>
+        </div>
+        <div class="time">
+          <h4>Выбрать время</h4>
+          <div class="morning">
+            <h5>Утро</h5>
+            <div class="slider">
+              <input type="radio" name="time" id="10am" checked><label for="10am">10:00</label>
+              <input type="radio" name="time" id="11am"><label for="11am">11:00</label>
+              <input type="radio" name="time" id="12am"><label for="12am">12:00</label>
+            </div>
+          </div>
+          <div class="daytime">
+            <h5>День</h5>
+            <div class="slider">
+              <input type="radio" name="time" id="1pm"><label for="1pm">13:00</label>
+              <input type="radio" name="time" id="2pm"><label for="2pm">14:00</label>
+              <input type="radio" name="time" id="3pm"><label for="3pm">15:00</label>
+              <input type="radio" name="time" id="4pm"><label for="4pm">16:00</label>
+              <input type="radio" name="time" id="5pm"><label for="5pm">17:00</label>
+            </div>
+          </div>
+          <div class="evening">
+            <h5>Вечер</h5>
+            <div class="slider">
+              <input type="radio" name="time" id="6pm"><label for="6pm">18:00</label>
+              <input type="radio" name="time" id="7pm"><label for="7pm">19:00</label>
+              <input type="radio" name="time" id="8pm"><label for="8pm">20:00</label>
+              <input type="radio" name="time" id="9pm"><label for="9pm">21:00</label>
+            </div>
+          </div>
+        </div>
+        <div class="auto slider">
+          <h4>Выбрать авто</h4>
+          <input type="radio" name="auto" id="auto-1" checked><label for="auto-1">Audi - A5</label>
+          <input type="radio" name="auto" id="auto-2"><label for="auto-2" >Mini - Cooper</label>
+          <input type="radio" name="auto" id="auto-3"><label for="auto-3" >Мотоцикл</label>
+        </div>
+        <div class="salon">
+          <h4>Выбрать салон</h4>
+          <input type="radio" name="salon" id="yeltsin" checked>
+          <label for="yeltsin">
+            <div>
+              <div class="preview" time-delay="9:00 - 22:00"><img src="/image/map.png">
+              </div>
+              <div>Ельцин центр</div>
+              <div class="sub-text">Бориса ельцина 3, паркинг, В сектор</div>
+            </div>
+          </label>
 
-    <secttion id="profile" hidden></secttion>
+          <input type="radio" name="salon" id="alatyr">
+          <label for="alatyr">
+            <div>
+              <div class="preview" time-delay="9:00 - 22:00"><img src="/image/map.png">
+              </div>
+              <div>ТРЦ Алатырь</div>
+              <div class="sub-text">Малышева 5, паркинг, -3 этаж</div>
+            </div>
+          </label>
+
+          <input type="radio" name="salon" id="tower">
+          <label for="tower">
+            <div>
+              <div class="preview" time-delay="9:00 - 22:00"><img src="/image/map.png">
+              </div>
+              <div>Башня Исеть</div>
+              <div class="sub-text">Бориса ельцина 6, паркинг, -2 этаж</div>
+            </div>
+          </label>
+        </div>
+
+        <input type="submit" value="Записаться" class="btn enable" onclick="record()">
+      </form>
+    </section>
+
+    <section id="records" hidden>
+      <div class="when">
+        <h4>Вы записаны</h4>
+        <div class="slider">
+          <div>21 января 2023</div>
+          <div>16:00</div>
+          <div>1050 ₽</div>
+        </div>
+      </div>
+      <div class="where">
+        <h2>Деликатная мойка кузова в 2 этапа</h2>
+        <div>
+          <div class="preview" time-delay="9:00 - 22:00"><img src="/image/map.png">
+          </div>
+          <div>Ельцин центр</div>
+          <div class="sub-text">Бориса ельцина 3, паркинг, В сектор</div>
+        </div>
+      </div>
+      <div class="remind">
+        <h3>Напомнить</h3>
+        <div class="slider">
+          <input type="radio" name="remind" id="for-day"><label for="for-day">За день</label>
+          <input type="radio" name="remind" id="for-3hour"><label for="for-3hour">За 3 часа</label>
+          <input type="radio" name="remind" id="for-hour" checked><label for="for-hour">За час</label>
+        </div>
+      </div>
+
+      <a href="#" class="btn enable">Отменить</a>
+      <h6>Так же отменить запись вы сможете в разделе уведомления</h6>
+    </section>
+
+    <section id="EROOR-successful" hidden>
+      <div id="EROOR" >
+        <h2>Что-то пошло не так, мы устраним неисправность в ближайшее время</h2>
+        <a href="#" class="btn enable">Записаться по телефону</a>
+        <a href="#" class="btn">Записаться через WhatsApp</a>
+        <a href="#" class="btn">Записаться через Telegram</a>
+      </div>
+
+      <div class="successful" hidden>
+        <h2>Спасибо за заявку!</h2>
+        <h2>Оператор свяжется с вами в ближайшее время</h2>
+        <h4>Выбрать способ связи</h4>
+        <a href="#" class="btn">Звонок</a>
+        <a href="#" class="btn">WhatsApp</a>
+        <a href="#" class="btn">Telegram</a>
+      </div>
+    </section>
+
+    <secttion id="profile" hidden>
+      <div class="account"></div>
+      <div class="garage"></div>
+      <div class="history"></div>
+    </secttion>
 
     <section id="contact" hidden></section>
 
@@ -877,13 +1035,32 @@
       </div>
     </section>
 
-    <section id="notifications" hidden></section>
+    <section id="notifications" hidden>
+      <div class="notification">
+        <h4>Промокод</h4>
+        <div class="description">Всю неделю SVX дарит премиальное гидрофобное покрытие для стёкл, при выборе комплекса SVX Detailing.</div>
+        <div class="date">14.10.2022 14:30</div>
+      </div>
+
+      <div class="notification">
+        <h4>Запись</h4>
+        <div class="description">Вы записаны на услугу: Деликатная мойка кузова в 2 этапа. 21 января 2023. 16:00. Цена: 1050₽</div>
+        <div class="date">07.10.2022 10:02</div>
+        <a href="#" class="btn enable">Отменить</a>
+      </div>
+
+      <div class="notification">
+        <h4>До вашего визита осталось 3 часа</h4>
+        <div class="description">Вы записаны на услугу: Деликатная мойка кузова в 2 этапа. 21 января 2023. 16:00. Цена: 1050₽ </div>
+        <a href="#" class="btn enable">Отменить</a>
+      </div>
+    </section>
 
     <footer>
       <nav>
         <a href="#" class="menu" id="contact" onclick="footerSwap('contact')"></a>
         <a href="#" class="menu" id="home" onclick="footerSwap('services')"></a>
-        <a href="#" class="menu" id="profile" onclick="footerSwap('profile')"></a>
+        <a href="#" class="menu" id="profile" onclick="toProfile()"></a>
       </nav>
     </footer>
   </main>

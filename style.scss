@@ -9,8 +9,6 @@ $color-emph: #E52335; // Выделяющий Цвет Текста
   background-position: center;
   background-size: contain;
   background-repeat: no-repeat;
-
-  
 }
 
 html {
@@ -34,228 +32,6 @@ body {
   }
 }
 
-main {
-  header {
-    flex-direction: column;
-    padding: 1rem 1rem;
-
-    .menu {
-      width: 100%;
-      display: flex;
-      flex-direction: row;
-      justify-content: space-between;
-      align-items: center;
-
-
-      font-size: 1.5em;
-
-      .back {
-        width: 2rem;
-        height: 2rem;
-        content: url('/image/icons/back.svg')
-      }
-    }
-  }
-
-  nav {
-    display: flex;
-    flex-direction: row;
-
-    overflow-x: auto;
-    padding: .7rem 1.1rem;
-    font-weight: 500;
-
-    input {
-      display: none;
-
-      &:checked+label {
-        background-color: $color-emph;
-      }
-    }
-
-    label {
-      padding: .6rem .9rem;
-      margin: 0 .3rem;
-
-      border-radius: 1em;
-      background-color: $color-sub;
-
-      text-align: center;
-
-      cursor: pointer;
-      white-space: nowrap;
-    }
-  }
-
-  section {
-    padding-top: 0;
-    padding-bottom: 6rem;
-
-    &#descriptions {
-      padding: 0;
-      padding-bottom: 1rem;
-    }
-
-    &#settings{
-      height: 70vh;
-      
-      >div{
-        display: flex;
-        flex-direction: column;
-        height: 95%;
-        padding: 1rem;
-        // padding-bottom: 5em;
-        justify-content: center;
-        >div{
-          margin: 0;
-          padding: 0;
-          background-color: $color-main;
-  
-          &.who-did{
-            position: relative;
-            flex-grow: 1;
-            padding-top: 2em;
-  
-            &>div{
-              position: absolute;
-              bottom: 0;
-  
-              padding: 0;
-              margin: 0;
-            }
-          }
-        }
-      }
-      
-      .options{
-        margin: 0;
-
-        margin-top: 1rem;
-
-        font-size: 1rem;
-        form{
-          display: grid;
-          grid-template-columns: 3fr min-content;
-          row-gap: 1rem;
-
-          label{
-            align-self: center;
-          }
-
-          .ios-checkbox{
-            position: relative;
-            width: 2.8rem;
-            height: 1.7rem;
-            justify-self: center;
-            background-color: #F2F2F2;
-            border-radius: 30%/50%;
-
-            cursor: pointer;
-
-            &:has(input[type=checkbox]:checked){
-              background-color: #34C759;
-            }
-
-            input[type=checkbox]{
-              visibility: hidden;
-
-              &:checked + label{
-                right: .1rem; 
-              }
-            }
-
-            label{
-              width: 1.5rem;
-              height: 1.5rem;
-              
-              position: absolute;
-              right: 1.15rem;
-              top: .1rem;
-              
-              z-index: 1;
-              
-              border-radius: 50%;
-              
-              background-color: #fff;
-              box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.15), 0px 3px 1px rgba(0, 0, 0, 0.06);
-
-              transition: all .3s ease;
-            } 
-          }
-        }
-      }
-    }
-
-    >div {
-      padding: 0;
-
-      &>div {
-
-        background-color: $color-sub;
-        border-radius: 1.2rem;
-
-        margin: .5rem 1rem;
-        padding: .7rem;
-        padding-bottom: 1rem;
-
-        font-weight: 500;
-
-
-        &+div {
-          margin-top: 1rem;
-        }
-
-
-        .preview {
-          width: 100%;
-          margin-bottom: 1.8rem;
-          background-color: $color-sub;
-
-          filter: drop-shadow(0px 4px 30px rgba(0, 0, 0, 0.2));
-
-          &::after {
-            content: attr(time-delay);
-
-            position: absolute;
-            right: 1em;
-            bottom: -0.9em;
-
-            min-width: 4.6rem;
-            padding: .6rem .9rem;
-            margin-top: 5rem;
-
-            border-radius: 1em;
-            background-color: $color-emph;
-
-            box-shadow: 0px 4px 30px rgba(0, 0, 0, .25);
-
-            text-align: center;
-            font-size: 1rem;
-          }
-
-          img {
-            width: 100%;
-            border-radius: .7rem;
-          }
-
-          +div {
-            line-height: 1.2em;
-          }
-        }
-
-        .sub-text {
-          margin-top: .5rem;
-          font-weight: 500;
-          font-size: .7rem;
-          line-height: .8rem;
-
-          color: rgba($color-text, $alpha: .4);
-        }
-      }
-    }
-  }
-}
-
 header {
   height: 100%;
 
@@ -265,11 +41,9 @@ header {
   justify-content: center;
   align-items: center;
 
-  
-
   .title {
     font-weight: 800;
-    line-height: 1;
+    line-height: 1.7;
     letter-spacing: .1em;
   }
 
@@ -347,23 +121,449 @@ header {
   }
 }
 
-#enterFrame{
-  height: 100%;
-}
+main {
+  header {
+    flex-direction: column;
+    padding: 1rem 1rem;
 
-#entryPage{
-  display: none;
-    
-  header:has(progress[value="100"]) + &{
-    display: block;
+    .menu {
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+
+
+      font-size: 1.5em;
+
+      .back {
+        width: 2rem;
+        height: 2rem;
+        content: url('/image/icons/back.svg')
+      }
+    }
+  }
+
+  nav {
+    display: flex;
+    flex-direction: row;
+
+    overflow-x: auto;
+    padding: .7rem 0rem;
+    font-weight: 500;
+
+    input {
+      display: none;
+
+      &:checked+label {
+        background-color: $color-emph;
+      }
+    }
+
+    label {
+      padding: .6rem .9rem;
+      margin: 0 .3rem;
+
+      border-radius: 1em;
+      background-color: $color-sub;
+
+      text-align: center;
+
+      cursor: pointer;
+      white-space: nowrap;
+    }
+  }
+
+  section {
+    padding-top: 0;
+    padding-bottom: 6rem !important;
+    padding: 1rem;
+
+    &#services {
+      p {
+        margin-top: 1rem;
+        margin-bottom: .7rem;
+      }
+
+      >div {
+        &>div {
+          // TODO Посмотреть на что может влиять
+          // margin: .5rem 1rem;
+          padding: .5rem .5rem 1rem .5rem;
+        }
+      }
+    }
+
+    &#descriptions {
+      padding: 0;
+      padding-bottom: 0 !important;
+    }
+
+    &#settings {
+      // height: 70vh;
+
+      >div {
+        display: flex;
+        flex-direction: column;
+        height: 95%;
+        justify-content: center;
+
+        >div {
+          background-color: $color-main;
+
+          &.who-did {
+            position: relative;
+            flex-grow: 1;
+            padding-top: 2em;
+
+            &>div {
+              position: absolute;
+              bottom: 0;
+
+              padding: 0;
+              margin: 0;
+            }
+          }
+        }
+      }
+
+      .options {
+        margin: 0;
+
+        margin-top: 1rem;
+        font-size: 1rem;
+
+        form {
+          margin-top: 1rem;
+          display: grid;
+          grid-template-columns: 3fr min-content;
+          row-gap: 1rem;
+
+          label {
+            align-self: center;
+            line-height: 2.5;
+          }
+
+          .ios-checkbox {
+            position: relative;
+            width: 2.8rem;
+            height: 1.7rem;
+            justify-self: center;
+            background-color: #F2F2F2;
+            border-radius: 30%/50%;
+
+            cursor: pointer;
+
+            &:has(input[type=checkbox]:checked) {
+              background-color: #34C759;
+            }
+
+            input[type=checkbox] {
+              visibility: hidden;
+
+              &:checked+label {
+                right: .1rem;
+              }
+            }
+
+            label {
+              width: 1.5rem;
+              height: 1.5rem;
+
+              position: absolute;
+              right: 1.15rem;
+              top: .1rem;
+
+              z-index: 1;
+
+              border-radius: 50%;
+
+              background-color: #fff;
+              box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.15), 0px 3px 1px rgba(0, 0, 0, 0.06);
+
+              transition: all .3s ease;
+            }
+          }
+        }
+      }
+    }
+
+    &#notifications {
+      padding: 1rem;
+
+      .notification {
+        display: flex;
+        flex-direction: column;
+        padding: 1rem .5rem;
+
+        background-color: $color-sub;
+        border-radius: 1rem;
+
+        font-weight: 500;
+
+        +.notification {
+          margin-top: 1rem;
+        }
+
+        h4, div{
+          margin: .25rem;
+        }
+
+        div {
+          font-size: .7rem;
+          // margin: .5rem 0;
+          padding: 0;
+          color: rgba($color-text, $alpha: .4);
+        }
+
+        .btn {
+          margin-top: 1rem;
+          margin-bottom: -.5rem;
+        }
+
+      }
+    }
+
+    &#appointment, &#records{
+      display: flex;
+      flex-direction: column;
+      form {
+        >div+div {
+          margin-top: 2rem;
+        }
+      }
+
+      h4{
+        margin-bottom: .6rem;
+      }
+
+      h5{
+        font-weight: 500;
+        margin-bottom: .6rem;
+      }
+
+      h6{
+        font-weight: 400;
+        color: rgba($color-text, $alpha: .3);
+      }
+
+      input[type=radio]{
+        display: none;
+
+        &:checked {
+          +label{
+            &, &>div{
+              background-color: $color-emph;
+            }
+          }
+        }
+      }
+
+      label{
+        border-radius: 1rem;
+        background-color: $color-sub;
+        text-align: center;
+
+        &:not(:first-child){
+          margin-right: .3rem;
+        }
+      }
+
+      >div+div {
+        margin-top: 1rem;
+      }
+      
+      .date{
+        .slider{
+          label{
+            padding: 1.5rem .6rem;
+            p{
+              width: 1.9rem;
+              &+p {
+                margin-top: 1rem;
+                padding-top: 1rem;
+                border-top: .2rem solid $color-text;
+              }
+            }
+          }
+        }
+      }
+
+      .time{
+        label{
+          padding: 0.8rem 1.16rem;
+        }
+        
+        div+div{
+          margin-top: 1rem;
+        }
+      }
+
+      .auto{
+        flex-direction: column;
+
+        label{
+          padding: 1rem;
+          
+          +input{ +label{ margin-top: 1rem; } }
+        }
+      }
+
+      .salon{
+        label{
+          text-align: left;
+          >div{
+            padding: 0.5rem 0.5rem 1rem 0.5rem;
+            border-radius: 1.2rem;
+            font-weight: 500;
+            background-color: #3A3939;
+  
+            +div{
+              margin-top: 1rem;
+            }
+          }
+        } 
+      }
+
+      .slider{
+        display: flex;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+      }
+
+
+      .when, .remind{
+        .slider{
+          padding: 0;
+          background-color: $color-main;
+          flex-wrap: wrap;
+          justify-content: center;
+
+          div, label{
+            padding: .6rem 1.5rem;
+            border-radius: 1rem;
+
+            font-size: .8rem;
+            background-color: $color-sub;
+            margin-top: .3rem;
+
+            +div, +input+label{
+              margin-left: .3rem;
+            }
+          }
+        }
+      }
+
+      .where{
+        >div{
+          padding: 0.5rem 0.5rem 1rem 0.5rem;
+        }
+      }
+    }
+
+    &#EROOR-successful{
+      // position: relative;
+      h2{
+        +h2, +h4{
+          margin-top: 1rem;
+        }
+      }
+
+      >div{
+        // width: 90%;
+        display: flex;
+        flex-direction: column;
+        // position: absolute;
+        // top: 20vh;
+
+        margin-top: 10vh;
+      }
+    }
+
+    >div {
+      padding: 0;
+
+      &>div {
+        padding-bottom: 1rem;
+
+        background-color: $color-sub;
+        border-radius: 1.2rem;
+
+        font-weight: 500;
+
+        &+div {
+          margin-top: 1rem;
+        }
+
+
+      }
+    }
+
+    .preview {
+      width: 100%;
+      margin-bottom: 1.8rem;
+
+      filter: drop-shadow(0px 4px 30px rgba(0, 0, 0, 0.2));
+
+      &::after {
+        content: attr(time-delay);
+
+        position: absolute;
+        right: 1em;
+        bottom: -0.9em;
+
+        min-width: 4.6rem;
+        padding: .6rem .9rem;
+        margin-top: 5rem;
+
+        border-radius: 1em;
+        background-color: $color-emph;
+
+        box-shadow: 0px 4px 30px rgba(0, 0, 0, .25);
+
+        text-align: center;
+        font-size: 1rem;
+      }
+
+      img {
+        width: 100%;
+        border-radius: .7rem;
+      }
+
+      +div {
+        line-height: 1.2em;
+        padding-left: 0.5rem;
+      }
+    }
+
+    .sub-text {
+      margin-top: .5rem;
+      font-weight: 500;
+      font-size: .7rem;
+      line-height: .8rem;
+
+      color: rgba($color-text, $alpha: .4);
+
+      padding-left: 0.5rem;
+    }
   }
 }
 
-
-
 section {
   padding: 2rem 0;
+  
+  &#entryPage, &#registrationPage {
+    padding: 3rem 1rem;
+    
+    header:has(progress[value="100"])+& {
+      display: block;
+    }
+  }
 
+  &#entryPage{
+    display: none;
+  }
+  
   &#agreementPage {
     font-weight: 400;
     font-size: .8rem;
@@ -386,9 +586,10 @@ section {
     flex-direction: column;
   }
 
-  &>* {
-    padding: .5rem 1.5rem;
-  }
+  // TODO 
+  // &>* {
+  //   padding: .5rem 1.5rem;
+  // }
 
   input {
     background-color: $color-main;
@@ -435,7 +636,7 @@ section {
 
 article {
   padding: 0;
-  height: calc(100% + 18vh);
+  // height: calc(100% - 6rem);
 
   >* {
     position: relative;
@@ -524,7 +725,7 @@ footer {
     align-items: center;
 
     a {
-      width: 1.7rem;
+      width: 3rem;
       height: 1.7rem;
 
       &#contact {
@@ -541,7 +742,6 @@ footer {
     }
   }
 }
-
 
 progress {
   &#preloader {
@@ -587,7 +787,21 @@ h5 { font-size: .8rem; }
 
 h6 { font-size: .6rem; }
 
-  
+
+#enterFrame {
+  height: 100%;
+
+  .btn:first-of-type{
+    margin-top: 3rem;
+  }
+}
+
+#deleteAccount {
+  h5 {
+    color: rgba($color-text, $alpha: .3)
+  }
+}
+
 .btn {
   width: 100%;
   
@@ -659,8 +873,8 @@ h6 { font-size: .6rem; }
 }
 
 .notifications {
-  width: 2rem;
-  height: 2.86rem;
+  width: 3rem;
+  height: 2.5rem;
   background-image: url('/image/icons/notifications.svg');
   background-size: contain;
 
@@ -690,10 +904,14 @@ h6 { font-size: .6rem; }
 .btn-group{
   display: flex;
   flex-direction: column;
+  
+  .btn:first-of-type{
+    margin-top: 0;
+  }
 }
 
-#deleteAccount{
-  h5{
-    color: rgba($color-text, $alpha: .4)
-  }
+.settings{
+  width: 3rem;
+  height: 2.2rem;
+  background-image: url('/image/icons/settings.svg');
 }
