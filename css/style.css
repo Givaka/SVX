@@ -4,7 +4,7 @@
   background-repeat: no-repeat;
 }
 
-html {
+html, input {
   font-size: 18px;
   font-family: "Montserrat", sans-serif;
   font-weight: 600;
@@ -27,11 +27,14 @@ header {
   text-align: center;
   justify-content: center;
   align-items: center;
+  position: relative;
+  z-index: 10000;
 }
 header .title {
   font-weight: 800;
   line-height: 1.7;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.25em;
+  filter: drop-shadow(0px 0px 7px rgba(0, 0, 0, 0.25));
 }
 header .sub-title {
   font-weight: 600;
@@ -132,20 +135,22 @@ main nav label {
   white-space: nowrap;
 }
 main section {
-  padding-top: 0;
-  padding-bottom: 6rem !important;
   padding: 1rem;
+  padding-top: 0;
+}
+main section#services {
+  padding-bottom: 6rem;
 }
 main section#services p {
   margin-top: 1rem;
   margin-bottom: 0.7rem;
 }
-main section#services > div > div {
-  padding: 0.5rem 0.5rem 1rem 0.5rem;
-}
 main section#descriptions {
   padding: 0;
   padding-bottom: 0 !important;
+}
+main section#settings {
+  height: calc(100vh - 10rem);
 }
 main section#settings > div {
   display: flex;
@@ -166,6 +171,17 @@ main section#settings > div > div.who-did > div {
   bottom: 0;
   padding: 0;
   margin: 0;
+}
+main section#settings #options {
+  display: grid;
+  grid-template-rows: repeat(auto-fit, minmax(30vh, 45vh));
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  /* height: 100%; */
+  padding-bottom: 5rem;
+}
+main section#settings #exitAccount, main section#settings #deleteAccount {
+  height: 70vh;
 }
 main section#settings .options {
   margin: 0;
@@ -242,6 +258,7 @@ main section#notifications .notification .btn {
 main section#appointment, main section#records {
   display: flex;
   flex-direction: column;
+  padding-bottom: 5rem;
 }
 main section#appointment form > div + div, main section#records form > div + div {
   margin-top: 2rem;
@@ -303,20 +320,6 @@ main section#appointment .auto label + input + label, main section#records .auto
 main section#appointment .salon label, main section#records .salon label {
   text-align: left;
 }
-main section#appointment .salon label > div, main section#records .salon label > div {
-  padding: 0.5rem 0.5rem 1rem 0.5rem;
-  border-radius: 1.2rem;
-  font-weight: 500;
-  background-color: #3A3939;
-}
-main section#appointment .salon label > div + div, main section#records .salon label > div + div {
-  margin-top: 1rem;
-}
-main section#appointment .slider, main section#records .slider {
-  display: flex;
-  flex-wrap: nowrap;
-  overflow-x: auto;
-}
 main section#appointment .when .slider, main section#appointment .remind .slider, main section#records .when .slider, main section#records .remind .slider {
   padding: 0;
   background-color: #1E1E1E;
@@ -344,17 +347,201 @@ main section#EROOR-successful > div {
   flex-direction: column;
   margin-top: 10vh;
 }
-main section > div {
-  padding: 0;
+main section#contact {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  bottom: 4rem;
+  padding-bottom: 0;
+  height: calc(100vh - 4rem);
 }
-main section > div > div {
-  padding-bottom: 1rem;
-  background-color: #3A3939;
-  border-radius: 1.2rem;
+main section#contact > div + div {
+  margin-top: 2rem;
+}
+main section#contact h4 {
+  color: rgba(255, 255, 255, 0.4);
+}
+main section#contact a {
+  display: flex;
+  justify-content: center;
+  padding: 1rem;
+}
+main section#contact a img {
+  margin-right: 1rem;
+}
+main section#contact a p {
+  display: inline;
+  font-size: 0.8rem;
+  margin: auto 0;
+}
+main section#contact .map {
+  margin: -1rem;
+}
+main section#contact .map img {
+  border-radius: 0 0 1rem 1rem;
+  width: 100%;
+}
+main section#contact .map.map-big {
+  z-index: 10;
+}
+main section#contact .addresses {
   font-weight: 500;
 }
-main section > div > div + div {
+main section#contact .addresses p + p {
   margin-top: 1rem;
+}
+main section#contact .addresses .adds {
+  font-size: 0.7rem;
+  color: rgba(255, 255, 255, 0.3);
+}
+main section#contact .social {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+main section#contact .social a {
+  padding: 0;
+}
+main section#profile {
+  position: relative;
+  bottom: 4.5rem;
+}
+main section#profile #account {
+  height: -webkit-max-content;
+  height: -moz-max-content;
+  height: max-content;
+  padding-bottom: 6rem;
+}
+main section#profile a {
+  display: block;
+}
+main section#profile h4 {
+  margin-bottom: 1rem;
+}
+main section#profile .account {
+  margin: -1rem;
+  margin-bottom: 3rem;
+  position: relative;
+  filter: drop-shadow(0px 4px 30px rgba(0, 0, 0, 0.25));
+}
+main section#profile .account img {
+  border-radius: 0 0 1rem 1rem;
+  width: 100%;
+}
+main section#profile .account .account-date {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  left: 1rem;
+  bottom: 1rem;
+  line-height: 2;
+}
+main section#profile .account .account-date input[type=text] {
+  background-color: transparent;
+  padding: 0;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+}
+main section#profile .account .account-date input[readonly], main section#profile .account .account-date input[readonly=readonly] {
+  border-bottom: none;
+}
+main section#profile .account .account-date .name {
+  width: 11em !important;
+}
+main section#profile .account .account-date .phone {
+  width: 10em !important;
+  font-size: 0.8rem;
+  font-weight: 400;
+}
+main section#profile .account .account-date .edit {
+  display: inline-block;
+  width: 1.2rem;
+  height: 1.2rem;
+  background-image: url("/image/icons/edit.svg");
+}
+main section#profile .account .account-edit {
+  position: relative;
+  filter: blur(7px);
+}
+main section#profile .account .account-edit-icon {
+  position: absolute;
+  top: calc(50% - 2rem);
+  left: calc(50% - 2rem);
+  width: 4rem;
+  height: 4rem;
+  background-image: url("/image/icons/photo-edit.svg");
+}
+main section#profile .account .btn {
+  position: absolute;
+  right: 1rem;
+  bottom: -2rem;
+  padding: 0.7rem 1rem;
+}
+main section#profile .garage .auto {
+  position: relative;
+  margin-bottom: 1rem;
+}
+main section#profile .garage .auto:first-of-type {
+  margin-top: 1rem;
+}
+main section#profile .garage div.btn {
+  cursor: auto;
+  box-shadow: none;
+  margin: 0;
+}
+main section#profile .garage div.btn:first-of-type {
+  margin-top: 0;
+}
+main section#profile .garage .del_auto {
+  position: absolute;
+  right: 0;
+  top: 0;
+  margin: 0;
+  padding: 1rem 0.5rem;
+  font-size: 0.75rem;
+}
+main section#profile .history input {
+  display: none;
+}
+main section#profile .history input:checked + label {
+  background-color: #E52335;
+}
+main section#profile .history label + input + label {
+  margin-left: 0.3rem;
+}
+main section#profile .history .btn {
+  padding: 0.8rem 1.1rem;
+}
+main section#profile .history .btn:first-of-type {
+  margin-top: 0;
+}
+main section#editAvatar {
+  padding: 0;
+  height: calc(100vh - 4.5rem);
+}
+main section#editAvatar .avatar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+main section#editAvatar .avatar .image {
+  position: relative;
+}
+main section#editAvatar .avatar .image img {
+  filter: brightness(0.5);
+}
+main section#editAvatar .avatar .image canvas {
+  display: block;
+  position: absolute;
+  top: 0;
+}
+main section#editAvatar .avatar button {
+  margin: 1rem;
+  padding: 1rem;
+  width: calc(100% - 2rem);
 }
 main section .preview {
   width: 100%;
@@ -391,6 +578,22 @@ main section .sub-text {
   color: rgba(255, 255, 255, 0.4);
   padding-left: 0.5rem;
 }
+main section .card {
+  padding: 0.5rem 0.5rem 1rem 0.5rem;
+  border-radius: 1.2rem;
+  font-weight: 500;
+  background-color: #3A3939;
+}
+main section .card + .card {
+  margin-top: 1rem;
+}
+
+#enterFrame {
+  height: 100%;
+}
+#enterFrame .btn:first-of-type {
+  margin-top: 3rem;
+}
 
 section {
   padding: 2rem 0;
@@ -407,9 +610,11 @@ section#entryPage {
 section#agreementPage {
   font-weight: 400;
   font-size: 0.8rem;
+  padding: 2rem 1rem;
 }
-section#agreementPage h3 {
+section#agreementPage h4 {
   font-weight: 600;
+  margin: 1.5rem 0;
 }
 section#agreementPage a div {
   width: 2.5rem;
@@ -432,31 +637,6 @@ section input:-ms-input-placeholder {
 }
 section input::placeholder {
   color: #ffffff;
-}
-section .enterInput {
-  display: flex;
-  flex-direction: column;
-  border-bottom: 2px solid #ffffff;
-  margin-bottom: 2rem;
-}
-section .enterInput label {
-  color: rgba(255, 255, 255, 0.2);
-}
-section .enterInput .inputInline {
-  display: flex;
-}
-section .enterInput .inputInline input {
-  flex-basis: 90%;
-  margin-right: 5%;
-}
-section .enterInput .inputInline .password-control {
-  width: 1.5em;
-  height: 1em;
-  margin-top: 0.7rem;
-  background: url("/image/icons/show.svg") 0 0 no-repeat;
-}
-section .enterInput .inputInline .password-control.view {
-  background: url("/image/icons/no-show.svg") 0 0 no-repeat;
 }
 
 article {
@@ -599,21 +779,13 @@ h6 {
   font-size: 0.6rem;
 }
 
-#enterFrame {
-  height: 100%;
-}
-#enterFrame .btn:first-of-type {
-  margin-top: 3rem;
-}
-
 #deleteAccount h5 {
   color: rgba(255, 255, 255, 0.3);
 }
 
 .btn {
-  width: 100%;
   margin-bottom: 1rem;
-  padding: 1.1rem 0;
+  padding: 0.8rem 1.1rem;
   border-radius: 1rem;
   background-color: #3A3939;
   box-shadow: 0px 4px 30px rgba(0, 0, 0, 0.25);
@@ -701,4 +873,90 @@ h6 {
   width: 3rem;
   height: 2.2rem;
   background-image: url("/image/icons/settings.svg");
+}
+
+.instagram, .facebook, .vk, .youtube {
+  width: 2rem;
+  height: 2rem;
+}
+
+.instagram {
+  background-image: url("/image/icons/instagram.svg");
+}
+
+.facebook {
+  background-image: url("/image/icons/fb.svg");
+}
+
+.vk {
+  background-image: url("/image/icons/vk.svg");
+}
+
+.youtube {
+  background-image: url("/image/icons/youtube.svg");
+}
+
+.slider {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+}
+
+.enterInput {
+  display: flex;
+  flex-direction: column;
+  border-bottom: 2px solid #ffffff;
+  margin-bottom: 2rem;
+}
+.enterInput label {
+  color: rgba(255, 255, 255, 0.2);
+}
+.enterInput .inputInline {
+  display: flex;
+}
+.enterInput .inputInline input {
+  flex-basis: 90%;
+  margin-right: 5%;
+}
+.enterInput .inputInline .password-control {
+  width: 2em;
+  height: 2em;
+  margin-top: 0.7rem;
+  margin-right: 0.5rem;
+  background: url("/image/icons/show.svg") 0 0 no-repeat;
+}
+.enterInput .inputInline .password-control.view {
+  background: url("/image/icons/no-show.svg") 0 0 no-repeat;
+}
+.enterInput .inputInline .car-number-help {
+  width: 1.5em;
+  height: 2em;
+  margin-top: 0.7rem;
+  margin-right: 0.5rem;
+  background-image: url("/image/icons/more.svg");
+  position: relative;
+}
+.enterInput .inputInline .car-number-help:hover span {
+  display: block;
+}
+.enterInput .inputInline .car-number-help span {
+  display: none;
+  position: absolute;
+  bottom: 2.5rem;
+  right: -0.5rem;
+  width: 55vw;
+  padding: 0.4rem 1rem;
+  background-color: #D9D9D9;
+  font-size: 0.85rem;
+  color: #1E1E1E;
+  text-align: right;
+}
+.enterInput .inputInline .car-number-help span:after {
+  content: "";
+  position: absolute;
+  bottom: -2rem;
+  right: 0;
+  z-index: -1;
+  border: 20px solid transparent;
+  border-top: 20px solid rgba(255, 255, 255, 0.8431372549);
 }
