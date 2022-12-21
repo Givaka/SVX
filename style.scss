@@ -141,7 +141,7 @@ main {
       .back {
         width: 2rem;
         height: 2rem;
-        content: url('/image/icons/back.svg')
+        content: url('image/icons/back.svg')
       }
     }
   }
@@ -599,7 +599,7 @@ main {
             display: inline-block;
             width: 1.2rem;
             height: 1.2rem;
-            background-image: url('/image/icons/edit.svg');
+            background-image: url('image/icons/edit.svg');
           }
         }
 
@@ -616,7 +616,7 @@ main {
           
           width: 4rem;
           height: 4rem;
-          background-image: url('/image/icons/photo-edit.svg');
+          background-image: url('image/icons/photo-edit.svg');
         }
 
         .btn{
@@ -816,7 +816,7 @@ section {
       div {
         width: 2.5rem;
         height: 2.5rem;
-        background-image: url('/image/icons/back.svg');
+        background-image: url('image/icons/back.svg');
       }
     }
   }
@@ -930,15 +930,15 @@ footer {
       height: 1.7rem;
 
       &#contact {
-        background-image: url('/image/icons/contact.svg');
+        background-image: url('image/icons/contact.svg');
       }
 
       &#home {
-        background-image: url('/image/icons/home.svg');
+        background-image: url('image/icons/home.svg');
       }
 
       &#profile {
-        background-image: url('/image/icons/profile.svg');
+        background-image: url('image/icons/profile.svg');
       }
     }
   }
@@ -1065,7 +1065,7 @@ h6 { font-size: .6rem; }
 .notifications {
   width: 3rem;
   height: 2.5rem;
-  background-image: url('/image/icons/notifications.svg');
+  background-image: url('image/icons/notifications.svg');
   background-size: contain;
 
   &::before {
@@ -1103,7 +1103,7 @@ h6 { font-size: .6rem; }
 .settings{
   width: 3rem;
   height: 2.2rem;
-  background-image: url('/image/icons/settings.svg');
+  background-image: url('image/icons/settings.svg');
 }
 
 .instagram, .facebook, .vk, .youtube{
@@ -1111,10 +1111,10 @@ h6 { font-size: .6rem; }
   height: 2rem;
 }
 
-.instagram{ background-image: url('/image/icons/instagram.svg'); }
-.facebook{ background-image: url('/image/icons/fb.svg'); }
-.vk{ background-image: url('/image/icons/vk.svg'); }
-.youtube{ background-image: url('/image/icons/youtube.svg');}
+.instagram{ background-image: url('image/icons/instagram.svg'); }
+.facebook{ background-image: url('image/icons/fb.svg'); }
+.vk{ background-image: url('image/icons/vk.svg'); }
+.youtube{ background-image: url('image/icons/youtube.svg');}
 
 .slider {
   display: flex;
@@ -1157,7 +1157,7 @@ h6 { font-size: .6rem; }
       height: 2em;
       margin-top: .7rem;
       margin-right: 0.5rem;
-      background-image: url('/image/icons/more.svg');
+      background-image: url('image/icons/more.svg');
       position: relative;
 
       &:hover span {

@@ -110,7 +110,7 @@ main header .menu {
 main header .menu .back {
   width: 2rem;
   height: 2rem;
-  content: url("/image/icons/back.svg");
+  content: url("image/icons/back.svg");
 }
 main nav {
   display: flex;
@@ -458,7 +458,7 @@ main section#profile .account .account-date .edit {
   display: inline-block;
   width: 1.2rem;
   height: 1.2rem;
-  background-image: url("/image/icons/edit.svg");
+  background-image: url("image/icons/edit.svg");
 }
 main section#profile .account .account-edit {
   position: relative;
@@ -470,7 +470,7 @@ main section#profile .account .account-edit-icon {
   left: calc(50% - 2rem);
   width: 4rem;
   height: 4rem;
-  background-image: url("/image/icons/photo-edit.svg");
+  background-image: url("image/icons/photo-edit.svg");
 }
 main section#profile .account .btn {
   position: absolute;
@@ -619,7 +619,7 @@ section#agreementPage h4 {
 section#agreementPage a div {
   width: 2.5rem;
   height: 2.5rem;
-  background-image: url("/image/icons/back.svg");
+  background-image: url("image/icons/back.svg");
 }
 section form {
   display: flex;
@@ -718,13 +718,13 @@ footer nav a {
   height: 1.7rem;
 }
 footer nav a#contact {
-  background-image: url("/image/icons/contact.svg");
+  background-image: url("image/icons/contact.svg");
 }
 footer nav a#home {
-  background-image: url("/image/icons/home.svg");
+  background-image: url("image/icons/home.svg");
 }
 footer nav a#profile {
-  background-image: url("/image/icons/profile.svg");
+  background-image: url("image/icons/profile.svg");
 }
 
 progress#preloader {
@@ -840,7 +840,7 @@ h6 {
 .notifications {
   width: 3rem;
   height: 2.5rem;
-  background-image: url("/image/icons/notifications.svg");
+  background-image: url("image/icons/notifications.svg");
   background-size: contain;
 }
 .notifications::before {
@@ -872,7 +872,7 @@ h6 {
 .settings {
   width: 3rem;
   height: 2.2rem;
-  background-image: url("/image/icons/settings.svg");
+  background-image: url("image/icons/settings.svg");
 }
 
 .instagram, .facebook, .vk, .youtube {
@@ -881,19 +881,19 @@ h6 {
 }
 
 .instagram {
-  background-image: url("/image/icons/instagram.svg");
+  background-image: url("image/icons/instagram.svg");
 }
 
 .facebook {
-  background-image: url("/image/icons/fb.svg");
+  background-image: url("image/icons/fb.svg");
 }
 
 .vk {
-  background-image: url("/image/icons/vk.svg");
+  background-image: url("image/icons/vk.svg");
 }
 
 .youtube {
-  background-image: url("/image/icons/youtube.svg");
+  background-image: url("image/icons/youtube.svg");
 }
 
 .slider {
@@ -933,7 +933,7 @@ h6 {
   height: 2em;
   margin-top: 0.7rem;
   margin-right: 0.5rem;
-  background-image: url("/image/icons/more.svg");
+  background-image: url("image/icons/more.svg");
   position: relative;
 }
 .enterInput .inputInline .car-number-help:hover span {

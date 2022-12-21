@@ -124,13 +124,13 @@ function expandMap() {
   let target = event.target;
   if (target.closest('div.map-big')){
     target.closest('div.map').classList.remove("map-big");
-    target.src = '/image/map.png';
+    target.src = 'image/map.png';
     document.querySelector('#contact>.addresses').hidden = false;
     document.querySelector('#contact>.social').hidden = false;
     document.querySelector('#contact>.email').hidden = false;
   } else {
     target.closest('div.map').classList.add("map-big");
-    target.src = '/image/map-big.png';
+    target.src = 'image/map-big.png';
     document.querySelector('#contact>.addresses').hidden = true;
     document.querySelector('#contact>.social').hidden = true;
     document.querySelector('#contact>.email').hidden = true;
