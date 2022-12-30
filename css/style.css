@@ -79,6 +79,9 @@ header .auntifications > * {
 header .auntifications > input:checked + label {
   border-bottom: #E52335 solid;
 }
+header .auntifications label {
+  cursor: pointer;
+}
 header:has(progress[value="100"]) {
   -webkit-animation: logoUp 1s 1 forwards cubic-bezier(0.11, 0.83, 1, 0.67);
           animation: logoUp 1s 1 forwards cubic-bezier(0.11, 0.83, 1, 0.67);
@@ -357,6 +360,9 @@ main section#appointment .when .slider div, main section#appointment .when .slid
 main section#appointment .when .slider div + div:nth-child(even), main section#appointment .when .slider div + input:nth-child(even) + label, main section#appointment .when .slider label + div:nth-child(even), main section#appointment .when .slider label + input:nth-child(even) + label, main section#appointment .remind .slider div + div:nth-child(even), main section#appointment .remind .slider div + input:nth-child(even) + label, main section#appointment .remind .slider label + div:nth-child(even), main section#appointment .remind .slider label + input:nth-child(even) + label, main section#records .when .slider div + div:nth-child(even), main section#records .when .slider div + input:nth-child(even) + label, main section#records .when .slider label + div:nth-child(even), main section#records .when .slider label + input:nth-child(even) + label, main section#records .remind .slider div + div:nth-child(even), main section#records .remind .slider div + input:nth-child(even) + label, main section#records .remind .slider label + div:nth-child(even), main section#records .remind .slider label + input:nth-child(even) + label {
   margin-left: 0.3rem;
   margin-right: 0.3rem;
+}
+main section#appointment .remind label, main section#records .remind label {
+  cursor: pointer;
 }
 main section#appointment .where > div, main section#records .where > div {
   padding: 0.5rem 0.5rem 1rem 0.5rem;

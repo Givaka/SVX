@@ -102,6 +102,10 @@ header {
     &>input:checked+label {
       border-bottom: #E52335 solid;
     }
+
+    label{
+      cursor: pointer;
+    }
   }
 
   &:has(progress[value="100"]) {
@@ -467,6 +471,12 @@ main {
               margin-right: .3rem;
             }
           }
+        }
+      }
+
+      .remind{
+        label{
+          cursor: pointer;
         }
       }
 

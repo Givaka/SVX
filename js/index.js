@@ -1,3 +1,4 @@
+// Блокирование form
 function cancelSubmit(event) { event.preventDefault(); }
 
 // Показ/Скрытие пароля
@@ -105,7 +106,6 @@ function toNotifications(){
   document.querySelector('header .notifications').hidden = true;
   document.getElementById('notifications').hidden = false;
 }
-
 
 // Уберает все открытые страницы с описанием услуг
 function clearService() {
@@ -264,7 +264,6 @@ function signUp() {
   }
 
   document.querySelector('#appointment .services').append(changeService);
-  
 }
 
 // Создание итоговой формы записи
@@ -274,6 +273,7 @@ function setRecords () {
       formLabel = document.querySelectorAll('#appointment input:checked+label');
 
   // Когда записан и сколько стоит
+  let recordsDate = new Date(formInput[3].id);
   document.querySelector('#recordsDate input').id = formInput[3].id;
   document.querySelector('#recordsDate label').setAttribute('for', formInput[3].id)
   document.querySelector('#recordsDate label').innerText = Intl.DateTimeFormat("ru", { dateStyle: "long" }).format(recordsDate);
