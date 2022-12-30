@@ -4,6 +4,10 @@
   background-repeat: no-repeat;
 }
 
+html {
+  overflow-x: hidden;
+}
+
 html, input {
   font-size: 18px;
   font-family: "Montserrat", sans-serif;
@@ -82,6 +86,13 @@ header:has(progress[value="100"]) {
 header:has(progress[value="100"]) + #entryPage {
   display: block;
 }
+header.progressComplete {
+  -webkit-animation: logoUp 1s 1 forwards cubic-bezier(0.11, 0.83, 1, 0.67);
+          animation: logoUp 1s 1 forwards cubic-bezier(0.11, 0.83, 1, 0.67);
+}
+header.progressComplete + #entryPage {
+  display: block;
+}
 header progress[value="100"] {
   display: none;
 }
@@ -110,7 +121,7 @@ main header .menu {
 main header .menu .back {
   width: 2rem;
   height: 2rem;
-  content: url("image/icons/back.svg");
+  content: url("../image/icons/back.svg");
 }
 main nav {
   display: flex;
@@ -258,10 +269,28 @@ main section#notifications .notification .btn {
 main section#appointment, main section#records {
   display: flex;
   flex-direction: column;
-  padding-bottom: 5rem;
+  padding-bottom: 6rem;
 }
 main section#appointment form > div + div, main section#records form > div + div {
   margin-top: 2rem;
+}
+main section#appointment input[type=radio], main section#records input[type=radio] {
+  display: none;
+}
+main section#appointment input[type=radio]:checked + label, main section#records input[type=radio]:checked + label {
+  cursor: default;
+}
+main section#appointment input[type=radio]:checked + label, main section#appointment input[type=radio]:checked + label > div, main section#records input[type=radio]:checked + label, main section#records input[type=radio]:checked + label > div {
+  background-color: #E52335;
+}
+main section#appointment label, main section#records label {
+  border-radius: 1rem;
+  background-color: #3A3939;
+  text-align: center;
+  cursor: pointer;
+}
+main section#appointment label:not(:first-child), main section#records label:not(:first-child) {
+  margin-right: 0.3rem;
 }
 main section#appointment h4, main section#records h4 {
   margin-bottom: 0.6rem;
@@ -271,25 +300,9 @@ main section#appointment h5, main section#records h5 {
   margin-bottom: 0.6rem;
 }
 main section#appointment h6, main section#records h6 {
+  margin-top: -0.5rem;
   font-weight: 400;
-  color: rgba(255, 255, 255, 0.3);
-}
-main section#appointment input[type=radio], main section#records input[type=radio] {
-  display: none;
-}
-main section#appointment input[type=radio]:checked + label, main section#appointment input[type=radio]:checked + label > div, main section#records input[type=radio]:checked + label, main section#records input[type=radio]:checked + label > div {
-  background-color: #E52335;
-}
-main section#appointment label, main section#records label {
-  border-radius: 1rem;
-  background-color: #3A3939;
-  text-align: center;
-}
-main section#appointment label:not(:first-child), main section#records label:not(:first-child) {
-  margin-right: 0.3rem;
-}
-main section#appointment > div + div, main section#records > div + div {
-  margin-top: 1rem;
+  color: rgba(255, 255, 255, 0.5);
 }
 main section#appointment .date .slider label, main section#records .date .slider label {
   padding: 1.5rem 0.6rem;
@@ -320,24 +333,40 @@ main section#appointment .auto label + input + label, main section#records .auto
 main section#appointment .salon label, main section#records .salon label {
   text-align: left;
 }
+main section#appointment .services a, main section#records .services a {
+  display: block;
+}
+main section#appointment .services a:hover, main section#records .services a:hover {
+  background-color: #E52335;
+}
+main section#appointment .services label, main section#records .services label {
+  text-align: left;
+}
 main section#appointment .when .slider, main section#appointment .remind .slider, main section#records .when .slider, main section#records .remind .slider {
   padding: 0;
   background-color: #1E1E1E;
   flex-wrap: wrap;
-  justify-content: center;
 }
 main section#appointment .when .slider div, main section#appointment .when .slider label, main section#appointment .remind .slider div, main section#appointment .remind .slider label, main section#records .when .slider div, main section#records .when .slider label, main section#records .remind .slider div, main section#records .remind .slider label {
   padding: 0.6rem 1.5rem;
   border-radius: 1rem;
   font-size: 0.8rem;
   background-color: #3A3939;
-  margin-top: 0.3rem;
+  margin-top: 0.5rem;
 }
-main section#appointment .when .slider div + div, main section#appointment .when .slider div + input + label, main section#appointment .when .slider label + div, main section#appointment .when .slider label + input + label, main section#appointment .remind .slider div + div, main section#appointment .remind .slider div + input + label, main section#appointment .remind .slider label + div, main section#appointment .remind .slider label + input + label, main section#records .when .slider div + div, main section#records .when .slider div + input + label, main section#records .when .slider label + div, main section#records .when .slider label + input + label, main section#records .remind .slider div + div, main section#records .remind .slider div + input + label, main section#records .remind .slider label + div, main section#records .remind .slider label + input + label {
+main section#appointment .when .slider div + div:nth-child(even), main section#appointment .when .slider div + input:nth-child(even) + label, main section#appointment .when .slider label + div:nth-child(even), main section#appointment .when .slider label + input:nth-child(even) + label, main section#appointment .remind .slider div + div:nth-child(even), main section#appointment .remind .slider div + input:nth-child(even) + label, main section#appointment .remind .slider label + div:nth-child(even), main section#appointment .remind .slider label + input:nth-child(even) + label, main section#records .when .slider div + div:nth-child(even), main section#records .when .slider div + input:nth-child(even) + label, main section#records .when .slider label + div:nth-child(even), main section#records .when .slider label + input:nth-child(even) + label, main section#records .remind .slider div + div:nth-child(even), main section#records .remind .slider div + input:nth-child(even) + label, main section#records .remind .slider label + div:nth-child(even), main section#records .remind .slider label + input:nth-child(even) + label {
   margin-left: 0.3rem;
+  margin-right: 0.3rem;
 }
 main section#appointment .where > div, main section#records .where > div {
   padding: 0.5rem 0.5rem 1rem 0.5rem;
+}
+main section#records > div + div {
+  margin-top: 2rem;
+}
+main section#records label {
+  cursor: default;
+  text-align: left;
 }
 main section#EROOR-successful h2 + h2, main section#EROOR-successful h2 + h4 {
   margin-top: 1rem;
@@ -352,8 +381,8 @@ main section#contact {
   flex-direction: column;
   position: relative;
   bottom: 4rem;
-  padding-bottom: 0;
-  height: calc(100vh - 4rem);
+  height: 100%;
+  padding-bottom: 1rem;
 }
 main section#contact > div + div {
   margin-top: 2rem;
@@ -458,7 +487,7 @@ main section#profile .account .account-date .edit {
   display: inline-block;
   width: 1.2rem;
   height: 1.2rem;
-  background-image: url("image/icons/edit.svg");
+  background-image: url("../image/icons/edit.svg");
 }
 main section#profile .account .account-edit {
   position: relative;
@@ -470,7 +499,7 @@ main section#profile .account .account-edit-icon {
   left: calc(50% - 2rem);
   width: 4rem;
   height: 4rem;
-  background-image: url("image/icons/photo-edit.svg");
+  background-image: url("../image/icons/photo-edit.svg");
 }
 main section#profile .account .btn {
   position: absolute;
@@ -500,6 +529,9 @@ main section#profile .garage .del_auto {
   margin: 0;
   padding: 1rem 0.5rem;
   font-size: 0.75rem;
+}
+main section#profile .history > div + div {
+  margin-top: 1rem;
 }
 main section#profile .history input {
   display: none;
@@ -604,8 +636,16 @@ section#entryPage, section#registrationPage {
 header:has(progress[value="100"]) + section#entryPage, header:has(progress[value="100"]) + section#registrationPage {
   display: block;
 }
-section#entryPage {
-  display: none;
+section#entryPage select, section#registrationPage select {
+  padding: 0.5rem 0;
+  background-color: inherit;
+  color: #ffffff;
+  font-size: 1rem;
+  width: 600;
+  border: 0;
+}
+section#entryPage select option, section#registrationPage select option {
+  background-color: #1E1E1E;
 }
 section#agreementPage {
   font-weight: 400;
@@ -619,7 +659,7 @@ section#agreementPage h4 {
 section#agreementPage a div {
   width: 2.5rem;
   height: 2.5rem;
-  background-image: url("image/icons/back.svg");
+  background-image: url("../image/icons/back.svg");
 }
 section form {
   display: flex;
@@ -718,13 +758,13 @@ footer nav a {
   height: 1.7rem;
 }
 footer nav a#contact {
-  background-image: url("image/icons/contact.svg");
+  background-image: url("../image/icons/contact.svg");
 }
 footer nav a#home {
-  background-image: url("image/icons/home.svg");
+  background-image: url("../image/icons/home.svg");
 }
 footer nav a#profile {
-  background-image: url("image/icons/profile.svg");
+  background-image: url("../image/icons/profile.svg");
 }
 
 progress#preloader {
@@ -812,6 +852,9 @@ h6 {
   display: flex;
   margin: 2rem 0 0;
 }
+.agreement label {
+  margin: auto 0;
+}
 .agreement label,
 .agreement a {
   font-size: 0.7rem;
@@ -840,7 +883,7 @@ h6 {
 .notifications {
   width: 3rem;
   height: 2.5rem;
-  background-image: url("image/icons/notifications.svg");
+  background-image: url("../image/icons/notifications.svg");
   background-size: contain;
 }
 .notifications::before {
@@ -872,7 +915,7 @@ h6 {
 .settings {
   width: 3rem;
   height: 2.2rem;
-  background-image: url("image/icons/settings.svg");
+  background-image: url("../image/icons/settings.svg");
 }
 
 .instagram, .facebook, .vk, .youtube {
@@ -881,19 +924,19 @@ h6 {
 }
 
 .instagram {
-  background-image: url("image/icons/instagram.svg");
+  background-image: url("../image/icons/instagram.svg");
 }
 
 .facebook {
-  background-image: url("image/icons/fb.svg");
+  background-image: url("../image/icons/fb.svg");
 }
 
 .vk {
-  background-image: url("image/icons/vk.svg");
+  background-image: url("../image/icons/vk.svg");
 }
 
 .youtube {
-  background-image: url("image/icons/youtube.svg");
+  background-image: url("../image/icons/youtube.svg");
 }
 
 .slider {
@@ -923,17 +966,17 @@ h6 {
   height: 2em;
   margin-top: 0.7rem;
   margin-right: 0.5rem;
-  background: url("/image/icons/show.svg") 0 0 no-repeat;
+  background: url("../image/icons/show.svg") 0 0 no-repeat;
 }
 .enterInput .inputInline .password-control.view {
-  background: url("/image/icons/no-show.svg") 0 0 no-repeat;
+  background: url("../image/icons/no-show.svg") 0 0 no-repeat;
 }
 .enterInput .inputInline .car-number-help {
   width: 1.5em;
   height: 2em;
   margin-top: 0.7rem;
   margin-right: 0.5rem;
-  background-image: url("image/icons/more.svg");
+  background-image: url("../image/icons/more.svg");
   position: relative;
 }
 .enterInput .inputInline .car-number-help:hover span {
@@ -959,4 +1002,14 @@ h6 {
   z-index: -1;
   border: 20px solid transparent;
   border-top: 20px solid rgba(255, 255, 255, 0.8431372549);
+}
+
+::-webkit-scrollbar {
+  height: 0.5rem;
+  background: inherit;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 1rem;
 }

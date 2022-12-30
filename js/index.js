@@ -1,3 +1,5 @@
+function cancelSubmit(event) { event.preventDefault(); }
+
 // Показ/Скрытие пароля
 function show_hide_password(target) {
   var input = target.previousElementSibling;
@@ -48,10 +50,10 @@ function seeService(when, inside=true) {
     menu.getElementsByClassName("title")[0].hidden = true;
     document.getElementById("services").hidden = true;
     document.getElementById("descriptions").hidden = false;
-    document.getElementById(when).hidden = false;
+    document.querySelector('article#'+when).hidden = false;
   } else{
     menu.getElementsByClassName("title")[0].hidden = false;
-    document.getElementById(when).hidden = true;
+    document.querySelector('article#' + when).hidden = true;
     document.getElementById("descriptions").hidden = true;
     document.getElementById("services").hidden = false;
   }
@@ -223,4 +225,84 @@ function editProfile() {
       event.target.parentNode.remove();
     })
   });
+}
+
+// Выбор услуги
+function signUp() {
+  let serviceID = event.target.closest('.service').id;
+  let service = document.querySelector('div[service = ' + serviceID + ']')
+  let replaced = document.querySelector('#appointment .services label');
+
+  document.querySelector("header >.menu .title").hidden = false;
+  document.querySelectorAll("#descriptions article").forEach(element => {
+    element.hidden = true;
+  });
+  document.getElementById("descriptions").hidden = true;
+  document.getElementById("appointment").hidden = false;
+
+  document.querySelector('header .back').remove();
+  
+  replaced.replaceChildren(service.cloneNode(true));
+  let selectedService = document.querySelector('#appointment .services [service]');
+  selectedService.removeAttribute('onclick');
+  document.querySelector('#appointment .services input').id = serviceID;
+  document.querySelector('#appointment .services input').checked = true;
+  replaced.setAttribute('for', serviceID);
+
+  swapPage('descriptions', 'appointment', {});
+
+  if (document.querySelector('#appointment .services a')){
+    document.querySelector('#appointment .services a').remove();
+  }
+
+  let changeService = document.createElement('a');
+  changeService.href = '#';
+  changeService.innerText = "Изменить";
+  changeService.classList.add('btn');
+  changeService.onclick = function () {
+    swapPage('appointment', 'services', {})
+  }
+
+  document.querySelector('#appointment .services').append(changeService);
+  
+}
+
+// Создание итоговой формы записи
+function setRecords () {
+  // 0:Салон; 1:Авто; 2:Услуга; 3:День; 4:Время;
+  let formInput = document.querySelectorAll('#appointment input:checked'),
+      formLabel = document.querySelectorAll('#appointment input:checked+label');
+
+  // Когда записан и сколько стоит
+  document.querySelector('#recordsDate input').id = formInput[3].id;
+  document.querySelector('#recordsDate label').setAttribute('for', formInput[3].id)
+  document.querySelector('#recordsDate label').innerText = Intl.DateTimeFormat("ru", { dateStyle: "long" }).format(recordsDate);
+  
+  document.querySelector('#recordsTime input').id = formInput[4].id;
+  document.querySelector('#recordsTime label').setAttribute('for', formInput[4].id)
+  document.querySelector('#recordsTime label').innerText = formLabel[4].innerText;
+
+  document.querySelector('#recordsPrice input').id = formInput[2].id;
+  document.querySelector('#recordsPrice label').setAttribute('for', formInput[2].id)
+  document.querySelector('#recordsPrice label').innerText = (document.querySelector('#descriptions article#' + formLabel[2].querySelector('div.card').getAttribute('service') + ' .price').innerText.substring(2));
+  
+  // Где записа и что записано
+  document.querySelector('#recordsService input').id = formInput[2].id;
+  document.querySelector('#recordsService label').setAttribute('for', formInput[2].id)
+  document.querySelector('#recordsService label h2').textContent = formLabel[2].querySelector('.preview + div').innerText;
+
+  document.querySelector('#recordsSalon input').id = formInput[0].id;
+  document.querySelector('#recordsSalon label').setAttribute('for', formInput[0].id)
+  document.querySelector('#recordsSalon label').replaceChildren(formLabel[0].querySelector('.card').cloneNode(true)); 
+}
+
+
+// Тест страницы с ошибкой записи
+function successfulEROOR() {
+  let testPage = Math.round(Math.random());
+  console.log(testPage);
+  if (testPage){
+    document.querySelector('#EROOR-successful #successful').hidden = true;
+    document.querySelector('#EROOR-successful #EROOR').hidden = false;
+  }
 }

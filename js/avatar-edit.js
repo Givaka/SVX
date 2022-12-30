@@ -10,11 +10,6 @@ function editAvatar() {
   ctx.width = image.width;
   ctx.height = image.height;
 
-  console.log(image);
-
-  // canvas.style.border = '5px solid red';
-
-
   let canvas_width = canvas.width;
   let canvas_height = canvas.height;
   let offset_x, offset_y;
@@ -35,8 +30,8 @@ function editAvatar() {
   let is_dragging = false;
 
 
-  let procent_window = 0.96;
-  let shape_width = parseInt(image.width * procent_window);
+  let shape_width = parseInt(image.width * 0.96);
+  let edit_width = parseInt(window.innerWidth * 0.5);
 
   let shape = { x: 20, y: 40, width: shape_width, height: shape_width, color: 'red' };
 
@@ -156,7 +151,9 @@ function editAvatar() {
   let draw_shapes = function () {
     ctx.clearRect(0, 0, canvas_width, canvas_height);
 
-    ctx.drawImage(image, shape.x, shape.y, 400, 400, shape.x, shape.y, shape.width, shape.height);
+    console.log(edit_width);
+
+    ctx.drawImage(image, shape.x, shape.y, shape.width, shape.height , shape.x, shape.y, edit_width, edit_width);
   }
 
   draw_shapes();

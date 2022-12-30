@@ -11,6 +11,10 @@ $color-emph: #E52335; // Выделяющий Цвет Текста
   background-repeat: no-repeat;
 }
 
+html{
+  overflow-x: hidden;
+}
+
 html, input {
   font-size: 18px;
   font-family: 'Montserrat', sans-serif;
@@ -108,6 +112,14 @@ header {
     }
   }
 
+  &.progressComplete{
+    animation: logoUp 1s 1 forwards cubic-bezier(0.11, 0.83, 1, 0.67);
+    
+    +#entryPage {
+      display: block;
+    }
+  }
+
   progress[value="100"] {
     display: none;
 
@@ -118,7 +130,8 @@ header {
 
     &~.auntifications {
       display: flex;
-      animation: fadeIn 1s both;
+      -moz-animation: fadeIn 1s both;
+           animation: fadeIn 1s both;
     }
   }
 }
@@ -141,7 +154,7 @@ main {
       .back {
         width: 2rem;
         height: 2rem;
-        content: url('image/icons/back.svg')
+        content: url('../image/icons/back.svg')
       }
     }
   }
@@ -333,11 +346,37 @@ main {
     &#appointment, &#records{
       display: flex;
       flex-direction: column;
-      padding-bottom: 5rem;
+      padding-bottom: 6rem;
 
       form {
         >div+div {
           margin-top: 2rem;
+        }
+      }
+      input[type=radio] {
+        display: none;
+  
+        &:checked {
+          +label {
+            cursor: default;
+  
+            &,
+            &>div {
+              background-color: $color-emph;
+            }
+          }
+        }
+      }
+  
+      label {
+        border-radius: 1rem;
+        background-color: $color-sub;
+        text-align: center;
+
+        cursor: pointer;
+  
+        &:not(:first-child) {
+          margin-right: .3rem;
         }
       }
 
@@ -351,34 +390,9 @@ main {
       }
 
       h6{
+        margin-top: -.5rem;
         font-weight: 400;
-        color: rgba($color-text, $alpha: .3);
-      }
-
-      input[type=radio]{
-        display: none;
-
-        &:checked {
-          +label{
-            &, &>div{
-              background-color: $color-emph;
-            }
-          }
-        }
-      }
-
-      label{
-        border-radius: 1rem;
-        background-color: $color-sub;
-        text-align: center;
-
-        &:not(:first-child){
-          margin-right: .3rem;
-        }
-      }
-
-      >div+div {
-        margin-top: 1rem;
+        color: rgba($color-text, $alpha: .5);
       }
       
       .date{
@@ -423,15 +437,22 @@ main {
         } 
       }
 
-      
+      .services{
+        a{ 
+          display: block; 
 
+          &:hover{
+            background-color: $color-emph;
+          }
+        }
+        label{ text-align: left;}
+      }
 
       .when, .remind{
         .slider{
           padding: 0;
           background-color: $color-main;
           flex-wrap: wrap;
-          justify-content: center;
 
           div, label{
             padding: .6rem 1.5rem;
@@ -439,19 +460,27 @@ main {
 
             font-size: .8rem;
             background-color: $color-sub;
-            margin-top: .3rem;
+            margin-top: .5rem;
 
-            +div, +input+label{
+            +div:nth-child(even), +input:nth-child(even)+label{
               margin-left: .3rem;
+              margin-right: .3rem;
             }
           }
         }
       }
 
-      .where{
-        >div{
-          padding: 0.5rem 0.5rem 1rem 0.5rem;
-        }
+      .where{ >div{ padding: 0.5rem 0.5rem 1rem 0.5rem; } }
+    }
+
+    &#records{
+      >div+div {
+        margin-top: 2rem;
+      }
+
+      label{
+        cursor: default;
+        text-align: left;
       }
     }
 
@@ -476,8 +505,8 @@ main {
       position: relative;
       bottom: 4rem;
 
-      padding-bottom: 0;
-      height: calc(100vh - 4rem);
+      height: 100%;
+      padding-bottom: 1rem;
 
       >div + div{
         margin-top: 2rem;
@@ -599,7 +628,7 @@ main {
             display: inline-block;
             width: 1.2rem;
             height: 1.2rem;
-            background-image: url('image/icons/edit.svg');
+            background-image: url('../image/icons/edit.svg');
           }
         }
 
@@ -616,7 +645,7 @@ main {
           
           width: 4rem;
           height: 4rem;
-          background-image: url('image/icons/photo-edit.svg');
+          background-image: url('../image/icons/photo-edit.svg');
         }
 
         .btn{
@@ -660,6 +689,10 @@ main {
       }
 
       .history{
+        >div + div{
+          margin-top: 1rem;
+        }
+
         input{
           display: none;
 
@@ -796,10 +829,22 @@ section {
     header:has(progress[value="100"])+& {
       display: block;
     }
-  }
 
-  &#entryPage {
-    display: none;
+    select{
+      padding: 0.5rem 0;
+
+      background-color: inherit;
+      color: $color-text;
+      font-size: 1rem;
+      width: 600;
+
+      border: 0;
+
+
+      option{
+        background-color: $color-main;
+      }
+    }
   }
 
   &#agreementPage {
@@ -816,7 +861,7 @@ section {
       div {
         width: 2.5rem;
         height: 2.5rem;
-        background-image: url('image/icons/back.svg');
+        background-image: url('../image/icons/back.svg');
       }
     }
   }
@@ -930,15 +975,15 @@ footer {
       height: 1.7rem;
 
       &#contact {
-        background-image: url('image/icons/contact.svg');
+        background-image: url('../image/icons/contact.svg');
       }
 
       &#home {
-        background-image: url('image/icons/home.svg');
+        background-image: url('../image/icons/home.svg');
       }
 
       &#profile {
-        background-image: url('image/icons/profile.svg');
+        background-image: url('../image/icons/profile.svg');
       }
     }
   }
@@ -1031,6 +1076,10 @@ h6 { font-size: .6rem; }
   display: flex;
   margin: 2rem 0 0;
 
+  label{
+    margin: auto 0;
+  }
+
   label,
   a {
     font-size: .7rem;
@@ -1065,7 +1114,7 @@ h6 { font-size: .6rem; }
 .notifications {
   width: 3rem;
   height: 2.5rem;
-  background-image: url('image/icons/notifications.svg');
+  background-image: url('../image/icons/notifications.svg');
   background-size: contain;
 
   &::before {
@@ -1103,7 +1152,7 @@ h6 { font-size: .6rem; }
 .settings{
   width: 3rem;
   height: 2.2rem;
-  background-image: url('image/icons/settings.svg');
+  background-image: url('../image/icons/settings.svg');
 }
 
 .instagram, .facebook, .vk, .youtube{
@@ -1111,10 +1160,10 @@ h6 { font-size: .6rem; }
   height: 2rem;
 }
 
-.instagram{ background-image: url('image/icons/instagram.svg'); }
-.facebook{ background-image: url('image/icons/fb.svg'); }
-.vk{ background-image: url('image/icons/vk.svg'); }
-.youtube{ background-image: url('image/icons/youtube.svg');}
+.instagram{ background-image: url('../image/icons/instagram.svg'); }
+.facebook{ background-image: url('../image/icons/fb.svg'); }
+.vk{ background-image: url('../image/icons/vk.svg'); }
+.youtube{ background-image: url('../image/icons/youtube.svg');}
 
 .slider {
   display: flex;
@@ -1145,10 +1194,10 @@ h6 { font-size: .6rem; }
       height: 2em;
       margin-top: .7rem;
       margin-right: 0.5rem;
-      background: url("/image/icons/show.svg") 0 0 no-repeat;
+      background: url("../image/icons/show.svg") 0 0 no-repeat;
 
       &.view {
-        background: url("/image/icons/no-show.svg") 0 0 no-repeat;
+        background: url("../image/icons/no-show.svg") 0 0 no-repeat;
       }
     }
 
@@ -1157,7 +1206,7 @@ h6 { font-size: .6rem; }
       height: 2em;
       margin-top: .7rem;
       margin-right: 0.5rem;
-      background-image: url('image/icons/more.svg');
+      background-image: url('../image/icons/more.svg');
       position: relative;
 
       &:hover span {
@@ -1192,4 +1241,14 @@ h6 { font-size: .6rem; }
       }
     }
   }
+}
+
+::-webkit-scrollbar {
+  height: 0.5rem;
+  background: inherit;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 1rem;
 }
